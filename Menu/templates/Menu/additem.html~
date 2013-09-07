@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<dl>
+			{% if user.profile.calories_remaining > 0 %}
+			<dt><h2 class="text-info">Hi {{ user.username }}! You have {{ user.profile.calories_remaining }} Calories Remaining</h2></dt>
+			{% else %}
+			<dt><h2 class="text-info">Hi {{ user.username }}! You have 0 Calories Remaining</h2></dt>
+			{% endif %}
+			<dd><h4 class="text-warning">Select a menu to begin adding items to your food log</h4><dd>
+		</dl>
+	</head>
+	<body>
+		</div id="menuselect">
+			</br>
+			</br>
+			<div class="row col-xs-12" style="text-align:center">
+			<img class="row img-rounded" src="{% static "assets/images/ucladiningservices.jpg" %}" width="300" style="border:2px solid; border-color:#3399cc">
+			</div>
+			</br>
+			<div class="row col-xs-12" style="text-align:center">
+			<ul class="list-unstyled" style="text-align:center">
+				<li>
+					<div class="col-xs-3 col-md-offset-2">
+					<a id="bfastbutton" href="/addbreakfast"><img class="img thumbnail" src="{% static "assets/images/breakfast.jpg" %}" width="140"></a>
+					</div>
+				</li>
+				<li>
+					<div class="col-xs-3">
+					<a id="lunchbutton" href="/addlunch"><img class="img thumbnail" src="{% static "assets/images/lunch.jpg" %}" width="140"></a>
+					</div>
+				</li>
+				<li>
+					<div class="col-xs-3">
+					<a id="dinnerbutton" href="/adddinner"><img class="img thumbnail" src="{% static "assets/images/dinner.jpg" %}" width="140"></a>
+					</div>				
+				</li>
+				<li>
+					<div class="col-xs-3">
+					<a id="snackbutton" href="/addsnacks"><img class="img thumbnail" src="{% static "assets/images/snacks.jpg" %}" width="140"></a>
+					</div>
+				</li>
+			</ul>
+			</div>
+			<!--<div class="row col-sm-12">
+				<div class="col-sm-2 col-sm-offset-2"><h5 class="text-info">Breakfast</h5></div>
+				<div class="col-sm-2"><h5 class="text-info">Lunch</h5></div>
+				<div class="col-sm-2"><h5 class="text-info">Dinner</h5></div>
+				<div class="col-sm-3"><h5 class="text-info">Snacks</h5></div>
+			</div>-->
+			</div>
+			</br>
+			</br>
+			<div class="row col-xs-12" style="text-align:center">
+			<img class="row img-rounded" src="{% static "assets/images/quickservice.jpg" %}" width="250" style="border:2px solid; border-color:#3399cc">
+			</div>
+			</br>
+			<div class="row col-xs-12">
+			<ul class="list-unstyled" style="text-align:center">
+				<li>
+					<div class="col-xs-3 col-md-2 col-md-offset-2">
+					<a id="1919button" href="/addcafe1919"><img class="img thumbnail" src="{% static "assets/images/Cafe1919.jpg" %}" width="180"></a>
+					</div>
+				</li>
+				<li>
+					<div class="col-xs-3 col-md-2">
+					<a id="bcafbutton" href="/addbruincafe"><img class="img-rounded thumbnail" src="{% static "assets/images/Bcafe.jpg" %}" width="180" style="margin-top:5px"></a>
+					</div>
+				</li>
+				<li>
+					<div class="col-xs-3 col-md-2">
+					<a id="rendebutton" href="/addrendezvous"><img class="img thumbnail" src="{% static "assets/images/Rende.jpg" %}" width="180"></a>
+					</div>
+				</li>
+				<li>
+					<div class="col-xs-3 col-md-2">
+					<a id="latebutton" href="/addlatenight"><img class="img thumbnail" src="{% static "assets/images/LateNight.jpg" %}" width="210" style="margin-top:30px"></a>
+					</div>
+				</li>
+			</ul>
+			</div>
+		</div>
+		</br>
+		</br>
+	</body>
+	{% endblock %}
+</html>

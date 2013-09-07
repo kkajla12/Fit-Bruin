@@ -1,0 +1,58 @@
+{% load static %}
+{% load bootstrap_toolkit %}
+
+<! DOCTYPE html>
+<html lang="en">
+	<title>Fit-Bruin!</title>	
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap3/css/bootstrap.css" %}">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<!--<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap2.css" %}">-->
+		<script type="text/javascript" src="{% static "assets/js/jquery.js" %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static "assets/bootstrap3/js/bootstrap.js" %}"></script>
+		<div id="Logo">		 
+			<img border="0" src="{% static "assets/images/Bear-Profile-Name.jpg" %}" alt="Logo" width="150" height="100">
+		</div>
+		{% block navbar %}
+		<div class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		<a class="navbar-brand" href="/">Fit Bruin</a>
+		</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">		
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="/profile">
+					Profile <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="/profile">Health Profile</a></li>
+						<li><a href="/additem">Add Items</a></li>
+						<li><a href="/foodlog">Food Log</a></li>
+					</ul>
+				</li>
+
+				<li><a href="/toptens">Top Tens</a></li>
+				<li class="vertical-divider"><a href="/about">About Us</a></li>
+				<li><a></a></li>
+				{% if user.is_authenticated %}
+				<div class="pull-right">
+				<li><a class="btn btn-info" href="/accounts/logout" style="margin-top:7px">Logout</a></li>
+				</div>
+				{% endif %}
+			</ul>
+		</div>
+		{% endblock %}	
+		</div>
+	</head>
+	<body style="background-color:#aad4ff">
+		<div id="page">
+
+		<div id="content">
+			{% block content%}{% endblock %}
+		</div>
+
+		</div>
+	</body>
+</html>

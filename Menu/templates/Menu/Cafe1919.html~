@@ -1,0 +1,50 @@
+{% load static %}
+{% load bootstrap_toolkit %}
+
+<! DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap.css" %}">
+		Cafe 1919 Menu:
+	</head>
+	<body>
+		<table class="table table-striped">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% for item in itemsList %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.fat_calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ item.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ item.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ item.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ item.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+						<td>{{ item.vitamin_A_dv }}%</td>
+						<td>{{ item.vitamin_C_dv }}%</td>
+						<td>{{ item.calcium_dv }}%</td>
+						<td>{{ item.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>

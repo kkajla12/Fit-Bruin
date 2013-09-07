@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_toolkit %}
+
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<div>
+		<h><strong>Dining Hall Breakfast Menu for {{ date }}<strong></h>
+		<div>
+	</head>
+	<body>
+		<form method="post" action="">
+			{% csrf_token %}
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Soups</th>
+				</thead>
+				<tbody>
+					{% if form.fields.soups.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.soups.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Prepared Salads</th>
+				</thead>
+				<tbody>
+					{% if form.fields.prepared_salads.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.prepared_salads.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Sandwich Bar</th>
+				</thead>
+				<tbody>
+					{% if form.fields.sandwich_bar.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.sandwich_bar.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Exhibition Kitchen</th>
+				</thead>
+				<tbody>
+					{% if form.fields.exhibition_kitchen.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.exhibition_kitchen.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Euro Kitchen</th>
+				</thead>
+				<tbody>
+					{% if form.fields.euro_kitchen.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.euro_kitchen.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>		
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Pizza Oven</th>
+				</thead>
+				<tbody>
+					{% if form.fields.pizza_oven.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.pizza_oven.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Grill</th>
+				</thead>
+				<tbody>
+					{% if form.fields.grill.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.grill.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">Hot Food Bar</th>
+				</thead>
+				<tbody>
+					{% if form.fields.hot_food_bar.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.hot_food_bar.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" value="{{ choice_value }}" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th class="well" style="text-align:center">From The Bakery</th>
+				</thead>
+				<tbody>
+					{% if form.fields.from_the_bakery.choices|length_is:"0" %}
+					<tr>
+						<td class="fieldWrapper">
+							None
+						</td>
+					</tr>
+					{% endif %}
+					{% for choice_value, choice_text in form.fields.from_the_bakery.choices %}
+					<tr>
+						<td class="fieldWrapper">
+							<label for="{{ choice_text }} id: {{ choice_value }}">{{ choice_text }}</label><input type="checkbox" class="pull-right">
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<input class="btn btn-info" type="submit" value="Add Item(s)">
+		</form>
+	</body>
+	{% endblock %}
+</html>

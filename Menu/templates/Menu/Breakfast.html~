@@ -1,0 +1,388 @@
+{% load static %}
+{% load bootstrap_toolkit %}
+
+<! DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap.css" %}">
+		For Breakfast Today:
+	</head>
+	<body>
+		<div>
+			<div class="well" style="text-align:center"><h>Soups</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if Soups_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+
+				{% for soup in Soups %}
+				<tr>
+						<td>{{ soup.name }}</td>
+						<td>{{ soup.calories }}</td>
+						<td>{{ soup.fat_calories }}</td>
+						<td>{{ soup.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ soup.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ soup.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ soup.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ soup.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ soup.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ soup.protein }}{{ item.protein_units }}</td>
+						<td>{{ soup.vitamin_A_dv }}%</td>
+						<td>{{ soup.vitamin_C_dv }}%</td>
+						<td>{{ soup.calcium_dv }}%</td>
+						<td>{{ soup.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+
+		<div>
+			<div class="well" style="text-align:center"><h>Prepared Salads</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if Prepared_Salads_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+				{% for salad in Prepared_Salads %}
+				<tr>
+						<td>{{ salad.name }}</td>
+						<td>{{ salad.calories }}</td>
+						<td>{{ salad.fat_calories }}</td>
+						<td>{{ salad.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ salad.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ salad.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ salad.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ salad.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ salad.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ salad.protein }}{{ item.protein_units }}</td>
+						<td>{{ salad.vitamin_A_dv }}%</td>
+						<td>{{ salad.vitamin_C_dv }}%</td>
+						<td>{{ salad.calcium_dv }}%</td>
+						<td>{{ salad.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+
+		<div>
+			<div class="well" style="text-align:center"><h>Exhibition Kitchen</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if Exhibition_Kitchen_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+				{% for item in Exhibition_Kitchen %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.fat_calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ item.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ item.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ item.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ item.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+						<td>{{ item.vitamin_A_dv }}%</td>
+						<td>{{ item.vitamin_C_dv }}%</td>
+						<td>{{ item.calcium_dv }}%</td>
+						<td>{{ item.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+
+		<div>
+			<div class="well" style="text-align:center"><h>Euro Kitchen</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if Euro_Kitchen_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+				{% for item in Euro_Kitchen %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.fat_calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ item.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ item.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ item.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ item.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+						<td>{{ item.vitamin_A_dv }}%</td>
+						<td>{{ item.vitamin_C_dv }}%</td>
+						<td>{{ item.calcium_dv }}%</td>
+						<td>{{ item.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+
+		<div>
+			<div class="well" style="text-align:center"><h>Pizza Oven</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if Pizza_Oven_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+				{% for item in Pizza_Oven %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.fat_calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ item.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ item.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ item.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ item.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+						<td>{{ item.vitamin_A_dv }}%</td>
+						<td>{{ item.vitamin_C_dv }}%</td>
+						<td>{{ item.calcium_dv }}%</td>
+						<td>{{ item.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+
+		<div>
+			<div class="well" style="text-align:center"><h>Grill</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if Grill_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+				{% for item in Grill %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.fat_calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ item.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ item.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ item.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ item.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+						<td>{{ item.vitamin_A_dv }}%</td>
+						<td>{{ item.vitamin_C_dv }}%</td>
+						<td>{{ item.calcium_dv }}%</td>
+						<td>{{ item.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+
+		<div>
+			<div class="well" style="text-align:center"><h>Hot Food Bar</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if Hot_Food_Bar_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+				{% for item in Hot_Food_Bar %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.fat_calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ item.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ item.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ item.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ item.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+						<td>{{ item.vitamin_A_dv }}%</td>
+						<td>{{ item.vitamin_C_dv }}%</td>
+						<td>{{ item.calcium_dv }}%</td>
+						<td>{{ item.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+
+		<div>
+			<div class="well" style="text-align:center"><h>From the Bakery</h></div>
+			<table class="table table-hover">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat Calories</th>
+				<th>Total Fat</th>
+				<th>Cholesterol</th>
+				<th>Sodium</th>
+				<th>Total Carbs</th>
+				<th>Dietary Fiber</th>
+				<th>Sugar</th>
+				<th>Protein</th>
+				<th>Vitamin A</th>
+				<th>Vitamin C</th>
+				<th>Calcium</th>
+				<th>Iron</th>
+			</thead>
+			<tbody>
+				{% if From_the_Bakery_count == 0 %}
+					<tr>
+						<td>None</td>
+					</tr>
+				{% endif %}
+				{% for item in From_the_Bakery %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.fat_calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.cholesterol }}{{ item.cholesterol_units }}</td>
+						<td>{{ item.sodium }}{{ item.sodium_units }}</td>
+						<td>{{ item.total_carbs }}{{ item.total_carbs_units }}</td>
+						<td>{{ item.dietary_fiber }}{{ item.dietary_fiber_units}}</td>
+						<td>{{ item.sugars }}{{ item.sugars_units}}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+						<td>{{ item.vitamin_A_dv }}%</td>
+						<td>{{ item.vitamin_C_dv }}%</td>
+						<td>{{ item.calcium_dv }}%</td>
+						<td>{{ item.iron_dv }}%</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_toolkit %}
+
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<div>
+			<dl>
+				<dt><h2 class="text-info">De Neve Late Night</h2></dt>
+				<dd><h4 class="text-warning">Check mark items you have eaten from the dropdown menus and click <button class="btn btn-info">Add Items</button> to add the items to your food log</h4></dd>
+			<dl>
+		</div>
+	</head>
+	<body>
+		<form method="post" action="">
+		{% csrf_token %}
+			<div class="panel-group" id="accordionmain">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Entrees" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Entrees <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Entrees" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.entrees.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.entrees %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#SidesandBeverages" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Sides & Beverages <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="SidesandBeverages" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.sides_and_beverages.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.sides_and_beverages %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#MyPizzaandWings" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">MyPizza & Wings <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="MyPizzaandWings" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.mypizza_and_wings.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.mypizza_and_wings %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					</br>
+					<div class="row col-sm-12" style="float:none; text-align:center">
+					<input class="btn btn-info" type="submit" value="Add Item(s)">
+					</div>
+			</div>
+		</form>
+	</body>
+	{% endblock %}
+</html>

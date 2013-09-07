@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_toolkit %}
+
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<div>
+			<dl>
+				<dt><h2 class="text-info">Cafe 1919</h2></dt>
+				<dd><h4 class="text-warning">Check mark items you have eaten from the dropdown menus and click <button class="btn btn-info">Add Items</button> to add the items to your food log</h4></dd>
+			<dl>
+		</div>
+	</head>
+	<body>
+		<form method="post" action="">
+		{% csrf_token %}
+			<div class="panel-group" id="accordionmain">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Breakfast" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Breakfast <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Breakfast" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.breakfast.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.breakfast %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Pizzette" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Pizzette <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Pizzette" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.pizzette.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.pizzette %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Panini" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Panini <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Panini" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.panini.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.panini %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Insalate" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Insalate <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Insalate" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.insalate.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.insalate %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Lasagna" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Lasagna <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Lasagna" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.lasagna.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.lasagna %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Sides" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Sides <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Sides" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.sides.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.sides %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Bibite" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Bibite <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Bibite" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.bibite.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.bibite %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Dolce" style="text-align:center">
+								<h4 class="panel-title" style="text-align:center">Dolce <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+							</a>
+						</div>
+						<div id="Dolce" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<!--<thead>
+										<th class="well" style="text-align:center">Soups</th>
+									</thead>-->
+									<tbody>
+										{% if form.fields.dolce.choices|length_is:"0" %}
+										<tr class="success">
+											<td class="fieldWrapper">None</td>
+										</tr>
+										{% else %}
+										{% for choice in form.dolce %}
+											{{ choice }}
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					</br>
+					<div class="row-fluid" style="float:none; text-align:center">
+					<input class="btn btn-info" type="submit" value="Add Item(s)">
+					</div>
+			</div>
+		</form>
+	</body>
+	{% endblock %}
+</html>

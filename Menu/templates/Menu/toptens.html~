@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<dl>
+			<dt><h2 class="text-info">Top Tens</h2></dt>
+			<dd><h4 class="text-warning">View the top ten foods of the day in several categories</h4></dd>
+		</dl>
+	</head>
+	<body>
+		<div id="breakfast">
+			<div class="row">
+				<h3 class="text-info" style="text-align:center">Breakfast</h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Calories</th>
+						</thead>	
+						<tbody>				
+						{% for item in mostcaloriesbreakfast %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+	
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Fat</th>
+						</thead>
+						<tbody>
+						{% for item in mostfatbreakfast %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+	
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Protein</th>
+						</thead>
+						<tbody>
+						{% for item in mostproteinbreakfast %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+				</div>
+
+				<div class="col-sm-4">
+				</div>
+
+				<div class="col-sm-4">
+				</div>	
+			</div>
+		</div>
+		<div id="lunch">
+			<div class="row">
+				<h3 class="text-info" style="text-align:center">Lunch</h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Calories</th>
+						</thead>	
+						<tbody>				
+						{% for item in mostcalorieslunch %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+	
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Fat</th>
+						</thead>
+						<tbody>
+						{% for item in mostfatlunch %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+	
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Protein</th>
+						</thead>
+						<tbody>
+						{% for item in mostproteinlunch %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+				</div>
+
+				<div class="col-sm-4">
+				</div>
+
+				<div class="col-sm-4">
+				</div>	
+			</div>
+		</div>
+		<div id="dinner">
+			<div class="row">
+				<h3 class="text-info" style="text-align:center">Dinner</h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Calories</th>
+						</thead>	
+						<tbody>				
+						{% for item in mostcaloriesdinner %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+	
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Fat</th>
+						</thead>
+						<tbody>
+						{% for item in mostfatdinner %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+	
+				<div class="col-sm-4">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Most Protein</th>
+						</thead>
+						<tbody>
+						{% for item in mostproteindinner %}
+							<tr class="success">
+								<td style="text-align:center">{{ item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+				</div>
+
+				<div class="col-sm-4">
+				</div>
+
+				<div class="col-sm-4">
+				</div>	
+			</div>
+		</div>
+		<div id="bruincafe">
+		</div>
+		<div id="rendezvous">
+		</div>
+		<div id="cafe1919">
+		</div>
+		<div id="latenight">
+		</div>
+	</body>
+	{% endblock %}
+</html>

@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<dl>
+			<dt><h2 class="text-info">Food Log</h2></dt>
+			<dd><h4 class="text-warning">Track your daily food intake. Add items with <button class="btn btn-info">Add Items</button> and remove items using the <i class="icon-trash"></i> by each item.</h4></dd>
+		</dl>
+	</head>
+	<body>
+	{% csrf_token %}
+		<div class="panel-group" id="accordionmain">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#breakfast">
+					<h4 class="panel-title" style="text-align:center">Breakfast <span class="glyphicon glyphicon-chevron-down" style="float:right"></span></h4>
+					</a>
+				</div>
+				<div id="breakfast" class="accordion-body collapse in">
+					<div class="accordion-inner">
+						<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<th>Item</th>
+								<th style="text-align:center">Calories</th>
+								<th style="text-align:center">Fat</th>
+								<th style="text-align:center">Sodium</th>
+								<th style="text-align:center">Dietary Fiber</th>
+								<th style="text-align:center">Cholesterol</th>
+								<th style="text-align:center">Total Carbs</th>
+								<th style="text-align:center">Protein</th>
+								<th style="text-align:center">Portion</th>
+								<th style="text-align:center">Delete</th>
+							</thead>
+							<tbody>
+								{% if breakfast|length_is:"0" %}
+								<!--<tr class="info">
+									<td>None</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>-->
+								{% else %}
+								{% for foodlog in breakfast %}
+								<tr class="success" id="{{ foodlog.id }}">
+									<td>{{ foodlog.item }}</td>
+									<td style="text-align:center">{{ foodlog.item.calories }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_fat }}{{ foodlog.item.total_fat_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.sodium }}{{ foodlog.item.sodium_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.dietary_fiber }}{{ foodlog.item.dietary_fiber_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
+									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
+									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+								</tr>
+								{% endfor %}
+								{% endif %}
+							</tbody>
+						</table>
+						</div>
+						<div class="row col-sm-12">
+							<a class="btn btn-info" href="/addbreakfast">Add Items</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#lunch">
+					<h4 class="panel-title" style="text-align:center">Lunch <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+					</a>
+				</div>
+				<div id="lunch" class="accordion-body collapse">
+					<div class="accordion-inner">
+						<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<th>Item</th>
+								<th style="text-align:center">Calories</th>
+								<th style="text-align:center">Fat</th>
+								<th style="text-align:center">Sodium</th>
+								<th style="text-align:center">Dietary Fiber</th>
+								<th style="text-align:center">Cholesterol</th>
+								<th style="text-align:center">Total Carbs</th>
+								<th style="text-align:center">Protein</th>
+								<th style="text-align:center">Portion</th>
+								<th style="text-align:center">Delete</th>
+							</thead>
+							<tbody>
+								{% if lunch|length_is:"0" %}
+								<!--<tr class="info">
+									<td>None</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>-->
+								{% else %}
+								{% for foodlog in lunch %}
+								<tr class="success" id="{{ foodlog.id }}">
+									<td>{{ foodlog.item }}</td>
+									<td style="text-align:center">{{ foodlog.item.calories }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_fat }}{{ foodlog.item.total_fat_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.sodium }}{{ foodlog.item.sodium_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.dietary_fiber }}{{ foodlog.item.dietary_fiber_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
+									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
+									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+								</tr>
+								{% endfor %}
+								{% endif %}
+							</tbody>
+						</table>
+						</div>
+						<div class="row col-sm-12">
+							<a class="btn btn-info" href="/addlunch">Add Items</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#dinner">
+					<h4 class="panel-title" style="text-align:center">Dinner <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+					</a>
+				</div>
+				<div id="dinner" class="accordion-body collapse">
+					<div class="accordion-inner">
+						<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<th>Item</th>
+								<th style="text-align:center">Calories</th>
+								<th style="text-align:center">Fat</th>
+								<th style="text-align:center">Sodium</th>
+								<th style="text-align:center">Dietary Fiber</th>
+								<th style="text-align:center">Cholesterol</th>
+								<th style="text-align:center">Total Carbs</th>
+								<th style="text-align:center">Protein</th>
+								<th style="text-align:center">Portion</th>
+								<th style="text-align:center">Delete</th>
+							</thead>
+							<tbody>
+								{% if dinner|length_is:"0" %}
+								<!--<tr class="info">
+									<td>None</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>-->
+								{% else %}
+								{% for foodlog in dinner %}
+								<tr class="success" id="{{ foodlog.id }}">
+									<td>{{ foodlog.item }}</td>
+									<td style="text-align:center">{{ foodlog.item.calories }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_fat }}{{ foodlog.item.total_fat_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.sodium }}{{ foodlog.item.sodium_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.dietary_fiber }}{{ foodlog.item.dietary_fiber_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
+									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
+									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+								</tr>
+								{% endfor %}
+								{% endif %}
+							</tbody>
+						</table>
+						</div>
+						<div class="row col-sm-12">
+							<a class="btn btn-info" href="/adddinner">Add Items</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#snacks">
+					<h4 class="panel-title" style="text-align:center">Snacks <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
+					</a>
+				</div>
+				<div id="snacks" class="accordion-body collapse">
+					<div class="accordion-inner">
+						<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<th>Item</th>
+								<th style="text-align:center">Calories</th>
+								<th style="text-align:center">Fat</th>
+								<th style="text-align:center">Sodium</th>
+								<th style="text-align:center">Dietary Fiber</th>
+								<th style="text-align:center">Cholesterol</th>
+								<th style="text-align:center">Total Carbs</th>
+								<th style="text-align:center">Protein</th>
+								<th style="text-align:center">Portion</th>
+								<th style="text-align:center">Delete</th>
+							</thead>
+							<tbody>
+								{% if snacks|length_is:"0" %}
+								<!--<tr class="info">
+									<td>None</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>-->
+								{% else %}
+								{% for foodlog in snacks %}
+								<tr class="success" id="{{ foodlog.id }}">
+									<td>{{ foodlog.item }}</td>
+									<td style="text-align:center">{{ foodlog.item.calories }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_fat }}{{ foodlog.item.total_fat_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.sodium }}{{ foodlog.item.sodium_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.dietary_fiber }}{{ foodlog.item.dietary_fiber_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
+									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
+									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
+									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+								</tr>
+								{% endfor %}
+								{% endif %}
+							</tbody>
+						</table>
+						</div>
+						<div class="row col-sm-12">
+							<a class="btn btn-info" href="/addsnacks">Add Items</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	<script src="{% static "assets/js/deleteitem.js" %}"></script>
+	</body>
+	{% endblock %}
+</html>

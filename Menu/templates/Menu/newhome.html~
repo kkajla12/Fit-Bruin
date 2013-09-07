@@ -1,0 +1,39 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		<style type=text/css>
+			#note
+			{
+			height:210px;				
+			width:200px;				
+			border-style:groove;
+			border-color:3399FF;
+			margin:auto;
+			padding:12px;
+			padding-top:0px;
+			}
+			#logo1
+			{
+			float:right;
+			}		
+		</style>
+		<h1 style="color:blue; text-align:center">Welcome to Fit Bruin!</h1>	
+	</head>
+	<body>
+		<div id="vitalinfo">
+			<img id="logo1" border="0" src="Downloads/Bear-Profile-Name.jpg" alt="Bruin Fit Logo" width="300" height="300">			
+			<p style="color:blue">Complete your basic health profile to begin using the Fit Bruin calorie counter!</p>			
+			<p>Gender: <select>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+			</select></p>
+			<p>Current Weight: <input type="number" name="weight"> lbs.</p>
+			<p>Height: <input type="number" name="heightft"> feet <input type="number" name="heightin"> inches</p>
+			<button style="color:blue">Compute Recommended Caloric Intake</button>
+		</div>
+
+		<div id="note">
+			<p><strong>Note: </strong>Calorie allowance is based on BmI, which can overestimate body fat in athletes and others with muscular builds. Please adjust the computed calorie allowance or enter your own calorie allowance if necessary.</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+<! DOCTYPE html>
+
+<html>
+	{% block content %}
+	<head>
+		<dl>
+			<dt><h2 class="text-info">{{ user.username }}'s Fit Bruin Health Profile</h2></dt>
+			<dd><h4 class="text-warning">An overview of your daily nutrition. Choose to add items or view a detailed breakdown of your diet for today in the Foodlog</h4></dd>
+		</dl>
+	</head>
+	<body>	
+		<div id="profile" class="row">
+				<div class="row">
+					<div class="col-sm-3 col-xs-5" style="float:none; margin: 0 auto">
+					</br>
+					</br>
+					<table class="table table-hover">
+						<tbody>
+							<tr class="success">
+								<td class="text-success" style="text-align:center">{{ user.profile.calories_limit }}</td>
+								<td style="text-align:center"><span class="glyphicon glyphicon-minus"></span></td>
+								<td class="text-info" style="text-align:center">{{ user.profile.calories_eaten }}</td>
+								<td style="text-align:center"><span class="glyphicon glyphicon-arrow-right"></span></td>
+								<td class="text-info" style="text-align:center">{{ user.profile.calories_remaining }}</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td style="text-align:center"><strong>Goal</strong></td>
+								<td></td>
+								<td style="text-align:center"><strong>Eaten</strong></td>
+								<td></td>
+								<td style="text-align:center"><strong>Remain</strong></td>
+							</tr>
+						</tfoot>
+					</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-12 col-xs-10" style="float:none; margin: 0 auto">
+					<table class="table table-bordered table-hover">
+						<thead style="background-color:#dba16b">
+							<th></th>
+							<th style="text-align:center">Fat</th>
+							<th style="text-align:center">Sodium</th>
+							<th style="text-align:center">Dietary Fiber</th>
+							<th style="text-align:center">Cholesterol</th>
+							<th style="text-align:center">Total Carbs</th>
+							<th style="text-align:center">Protein</th>
+						</thead>
+						<tbody>
+							<tr class="success">
+								<td><strong>Eaten</strong></td>
+								<td style="text-align:center">{{ user.profile.total_fat_eaten }}{{ user.profile.total_fat_units }}</td>
+								<td style="text-align:center">{{ user.profile.sodium_eaten }}{{ user.profile.sodium_units }}</td>
+								<td style="text-align:center">{{ user.profile.dietary_fiber_eaten }}{{ user.profile.dietary_fiber_units }}</td>
+								<td style="text-align:center">{{ user.profile.cholesterol_eaten }}{{ user.profile.cholesterol_units }}</td>
+								<td style="text-align:center">{{ user.profile.total_carbs_eaten }}{{ user.profile.total_carbs_units }}</td>
+								<td style="text-align:center">{{ user.profile.protein_eaten }}{{ user.profile.protein_units }}</td>
+							</tr>
+
+							<tr class="success">
+								<td><strong>Remaining</strong></td>
+								<td style="text-align:center">{{ user.profile.total_fat_remaining }}{{ user.profile.total_fat_units }}</td>
+								<td style="text-align:center">{{ user.profile.sodium_remaining }}{{ user.profile.sodium_units }}</td>
+								<td style="text-align:center">{{ user.profile.dietary_fiber_remaining }}{{ user.profile.dietary_fiber_units }}</td>
+								<td style="text-align:center">{{ user.profile.cholesterol_remaining }}{{ user.profile.cholesterol_units }}</td>
+								<td style="text-align:center">{{ user.profile.total_carbs_remaining }}{{ user.profile.total_carbs_units }}</td>
+								<td style="text-align:center">{{ user.profile.protein_remaining }}{{ user.profile.protein_units }}</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+				</br>
+				<div class="row">
+					<div class="col-sm-3 col-xs-5" style="float:none; margin: 0 auto">
+						<table class="table table-bordered table-hover">
+							<thead style="background-color:#dba16b">
+								<th style="text-align:center">Recently Eaten</th>
+							</thead>
+							<tbody>
+								{% if recentitems|length_is:"0" %}
+								<tr class="success">
+									<td style="text-align:center">None</td>
+								</tr>
+								{% else %}
+								{% for foodlog in recentitems %}
+								<tr class="success">
+									<td style="text-align:center">{{ foodlog.item }}</td>
+								</tr>
+								{% endfor %}
+								{% endif %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			</br>
+		</div>
+			<div class="row" style="float:none; margin:0 auto; text-align:center">
+				<div class="col-sm-2 col-sm-offset-4 col-xs-7 col-xs-offset-4">
+				<a class="btn btn-info" href="/additem">Add Items</a>
+				</div>
+				<div class="col-sm-2 col-xs-2">
+				<a class="btn btn-info" href="/foodlog">Food Log</a>
+				</div>
+			</div>
+		</br>
+		</br>
+		</br>
+		</br>
+		</br>
+	</body>
+	{% endblock %}
+</html>

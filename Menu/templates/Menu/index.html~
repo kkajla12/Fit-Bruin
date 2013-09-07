@@ -1,0 +1,21 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		Today's Menu
+	</head>
+	
+	<body>
+		{% for item in itemsList %}
+			<div id="menuitem">
+				<h>{{ item.name }}</h>
+				<script>
+					function showNF()
+					{
+						document.getElementById("menuitem").innerHTML={{ item.calories }}
+					}
+				</script>
+				<button type="button" href="showNF()">Nutrition Facts</button>
+			</div>
+		{% endfor %}
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		<h1>Dining Hall Menu:</h1>
+	</head>
+
+	<body>
+		<h>Breakfast:</h>
+		<table class="table table-striped">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat</th>
+				<th>Protein</th>
+			</thead>
+			<tbody>
+				{% for item in breakfast %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		
+		<h>Lunch:</h>
+		<table class="table table-striped">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat</th>
+				<th>Protein</th>
+			</thead>
+			<tbody>
+				{% for item in lunch %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<h>Dinner:</h>
+		<table class="table table-striped">
+			<thead>
+				<th>Item</th>
+				<th>Calories</th>
+				<th>Fat</th>
+				<th>Protein</th>
+			</thead>
+			<tbody>
+				{% for item in dinner %}
+				<tr>
+						<td>{{ item.name }}</td>
+						<td>{{ item.calories }}</td>
+						<td>{{ item.total_fat }}{{ item.total_fat_units }}</td>
+						<td>{{ item.protein }}{{ item.protein_units }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>

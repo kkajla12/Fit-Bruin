@@ -1,0 +1,10 @@
+<! DOCTYPE html>
+<html>
+<form action="" method="POST">
+	<label for="username">User name:</label>
+    	<input type="text" name="username" value="" id="username">
+    	<label for="password">Password:</label>
+    	<input type="password" name="password" value="" id="password">
+    	<input type="submit" value="login" />
+</form>
+</html>

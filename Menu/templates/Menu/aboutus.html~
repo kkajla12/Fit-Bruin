@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<dl>
+			<dt><h2 class="text-info">Fit Bruin</h2></dt>
+			<dd><h4 class="text-warning">Fit Bruin is an application, created by Bruins for Bruins, dedicated to helping students lead healthier lives by allowing them to easily keep track of their diet while eating on campus.</h4></dd>
+		</dl>
+	</head>
+	<body>
+	</body>
+	{% endblock %}
+</html>

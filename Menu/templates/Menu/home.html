@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bruin Fit!</title>
+	</head>
+	<body>
+		</br>
+		</br>	
+		<div class="row-fluid" style="float:none; margin:0 auto; text-align:center">			
+			<img class="img-rounded" src="{% static "assets/images/Bear-Profile-Name.jpg" %}" style="float:none; margin:0 auto">
+		</div>
+		</br>
+		</br>
+		<div class="row-fluid">
+			<div style="float:none; margin: 0 auto; text-align:center">
+				<a class="btn btn-default" href="/accounts/login/">Sign-in</a>
+			</div>
+			</br>
+			<div style="float:none; margin: 0 auto; text-align:center">
+				<a class="btn btn-info" href="/newuser/">Create an Account</a>
+			</div>
+		</div>
+		<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap3/css/bootstrap.css" %}">
+		<!--<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap2.css" %}">-->
+		<script type="text/javascript" src="{% static "assets/js/jquery.js" %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static "assets/bootstrap3/js/bootstrap.js" %}"></script>
+	</body>
+</html>

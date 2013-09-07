@@ -1,0 +1,50 @@
+import urllib2
+import datetime
+import re
+from bs4 import BeautifulSoup
+from Menu.models import Item
+
+#still need to implement the helper function which will (using a loop) parse each individual nutrition facts link. Also need to parse the links for breakfast, lunch, and dinner.
+
+def parseLink(link):
+	url = urllib2.urlopen(link).read()
+	soup = BeautifulSoup(url)
+	print soup.title.text
+	print '\n'
+	
+	#check certain conditions in the link to see what type of item it is. Then use beautiful soup to parse the nutrition facts and fill 		the database appropriately.
+
+d = datetime.datetime.today()
+
+soup = BeautifulSoup(urllib2.urlopen('http://menu.ha.ucla.edu/foodpro/default.asp?date=' + str(d.month) + '%2F' + str(d.day) + '%2F2013&meal=2&threshold=2').read())
+
+regularLinks = soup.find_all("a", class_="itemlink")
+veganLinks = soup.find_all("a", class_="itemlinkt")
+
+print "Regular Items:\n"
+for link in regularLinks:
+	url = "http://menu.ha.ucla.edu/foodpro/" + link['href']
+	parseLink(url)
+
+print "Vegan Items:\n"
+for link in veganLinks:
+	url = "http://menu.ha.ucla.edu/foodpro/" + link['href']
+	parseLink(url)
+
+#f = open('NutritionScrape', 'w')
+
+#for  in soup
+
+#print soup.title.text
+##print soup.find_all("link")
+#print soup.find_all(href=re.compile("(?<=http://map.ais.ucla.edu/portal/site/UCLA/menuitem.)"))
+
+#Need to create a primary method which parses the main UCLA-Dining page
+#and retrieves all of the <href> tags so that they can then be
+#separately parsed. This will allow a variable amount of webpages to be
+#parsed each time the script is run and run more efficiently.
+
+
+#The following two links are examples of the actual Full Dining Menu pages that need to be parsed. These links are slightly different everday corresponding to the dates
+#http://menu.ha.ucla.edu/foodpro/default.asp?date=7%2F10%2F2013&meal=2&threshold=2
+#http://menu.ha.ucla.edu/foodpro/default.asp?date=7%2F11%2F2013&meal=2&threshold=2

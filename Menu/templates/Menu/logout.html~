@@ -1,0 +1,18 @@
+{% load static %}
+<! DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div class="row-fluid">
+			<h3 class="page-header" style="text-align:center; color:#3399cc">Thank you for logging out!</h3>
+		</div>
+		<div class="row-fluid">
+			<div style="float:none; margin: 0 auto; text-align:center">
+				<a class="btn" href="/accounts/login/">Login</a>
+			</div>
+		</div>
+		<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap2.css" %}">
+	</body>
+</html>

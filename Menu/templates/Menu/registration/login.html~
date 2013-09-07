@@ -1,0 +1,39 @@
+{% load static %}
+{% load bootstrap3 %}
+<! DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap3/css/bootstrap.css" %}">
+	<!--<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap2.css" %}">-->
+</head>
+<style>
+	#login
+	{
+	text-align:center;
+	border: 3px;
+	border-style:groove;
+	width:auto;
+	margin:auto;
+	margin-top:150px;
+	border-left-color: #33CCFF;
+	border-top-color: #33CCFF;
+	border-right-color: #FFFF66;
+	border-bottom-color: #FFFF66;
+	background-color: #eaeaea;
+	}
+</style>
+
+<div class="row col-sm-12">
+<fieldset id="login" class="row col-sm-12">
+<form method="post" action="" style="margin-top:15px">
+{% csrf_token %}
+{% bootstrap_form form %}
+{% bootstrap_form_buttons %}
+<input class="btn btn-info" type="submit" value="login" id="loginbutton"/>
+<input type="hidden" name="next" value="/profile" />
+{% end_bootstrap_form_buttons %}
+</fieldset>
+</form>
+</div>
+</html>
+
