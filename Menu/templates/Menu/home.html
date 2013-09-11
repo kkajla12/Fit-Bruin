@@ -2,29 +2,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<title>Bruin Fit!</title>
 	</head>
 	<body>
 		</br>
 		</br>	
-		<div class="row-fluid" style="float:none; margin:0 auto; text-align:center">			
-			<img class="img-rounded" src="{% static "assets/images/Bear-Profile-Name.jpg" %}" style="float:none; margin:0 auto">
+		<div class="row col-md-12 col-xs-12" style="float:none; margin:0 auto; text-align:center">			
+			<img class="img-rounded img-responsive" src="{% static "images/Bear-Profile-Name.jpg" %}" style="float:none; margin:0 auto" alt="Responsive image">
 		</div>
 		</br>
 		</br>
-		<div class="row-fluid">
-			<div style="float:none; margin: 0 auto; text-align:center">
+		<div class="row col-md-12 col-xs-12">
+			<div class="col-md-3 col-xs-3">
+			</div>
+			<div class="col-md-6 col-xs-6" style="float:none; margin: 0 auto; text-align:center">
 				<a class="btn btn-default" href="/accounts/login/">Sign-in</a>
 			</div>
-			</br>
-			<div style="float:none; margin: 0 auto; text-align:center">
-				<a class="btn btn-info" href="/newuser/">Create an Account</a>
+			<div class="col-md-3 col-xs-3">
 			</div>
 		</div>
-		<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap3/css/bootstrap.css" %}">
-		<!--<link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap2.css" %}">-->
-		<script type="text/javascript" src="{% static "assets/js/jquery.js" %}"></script>
+		</br>
+		<div class="row col-md-12 col-xs-12">
+			<div class="col-md-3 col-xs-3">
+			</div>
+			<div class="col-md-6 col-xs-6" style="float:none; margin: 0 auto; text-align:center">
+				<a class="btn btn-info" href="/newuser/">Create an Account</a>
+			</div>
+			<div class="col-md-3 col-xs-3">
+			</div>
+		</div>
+		<link rel="stylesheet" type="text/css" href="{% static "bootstrap3/css/bootstrap.css" %}">
+		<!--<link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap2.css" %}">-->
+		<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script type="text/javascript" src="{% static "assets/bootstrap3/js/bootstrap.js" %}"></script>
+		<script type="text/javascript" src="{% static "bootstrap3/js/bootstrap.js" %}"></script>
 	</body>
 </html>

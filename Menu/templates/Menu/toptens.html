@@ -23,7 +23,7 @@
 						<tbody>				
 						{% for item in mostcaloriesbreakfast %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -38,7 +38,7 @@
 						<tbody>
 						{% for item in mostfatbreakfast %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ item.total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -53,7 +53,7 @@
 						<tbody>
 						{% for item in mostproteinbreakfast %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -84,7 +84,7 @@
 						<tbody>				
 						{% for item in mostcalorieslunch %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -99,7 +99,7 @@
 						<tbody>
 						{% for item in mostfatlunch %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -114,7 +114,7 @@
 						<tbody>
 						{% for item in mostproteinlunch %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -145,7 +145,7 @@
 						<tbody>				
 						{% for item in mostcaloriesdinner %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -160,7 +160,7 @@
 						<tbody>
 						{% for item in mostfatdinner %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ item.total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -175,7 +175,7 @@
 						<tbody>
 						{% for item in mostproteindinner %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -206,7 +206,7 @@
 						<tbody>				
 						{% for item in mostcaloriesfeast %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -221,7 +221,7 @@
 						<tbody>
 						{% for item in mostfatfeast %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ item.total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -236,7 +236,7 @@
 						<tbody>
 						{% for item in mostproteinfeast %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -267,7 +267,7 @@
 						<tbody>				
 						{% for item in mostcaloriescafe1919 %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -282,7 +282,7 @@
 						<tbody>
 						{% for item in mostfatcafe1919 %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ item.total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -297,7 +297,7 @@
 						<tbody>
 						{% for item in mostproteincafe1919 %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -328,7 +328,7 @@
 						<tbody>				
 						{% for item in mostcaloriesbruincafe %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -343,7 +343,7 @@
 						<tbody>
 						{% for item in mostfatbruincafe %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ item.total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -358,7 +358,7 @@
 						<tbody>
 						{% for item in mostproteinbruincafe %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -389,7 +389,7 @@
 						<tbody>				
 						{% for item in mostcaloriesrendezvous %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -404,7 +404,7 @@
 						<tbody>
 						{% for item in mostfatrendezvous %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ item.total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -419,7 +419,7 @@
 						<tbody>
 						{% for item in mostproteinrendezvous %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -450,7 +450,7 @@
 						<tbody>				
 						{% for item in mostcalorieslatenight %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.calories }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -465,7 +465,7 @@
 						<tbody>
 						{% for item in mostfatlatenight %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.total_fat }}{{ item.total_fat_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
@@ -480,7 +480,7 @@
 						<tbody>
 						{% for item in mostproteinlatenight %}
 							<tr class="success">
-								<td style="text-align:center">{{ item.name }}</td>
+								<td style="text-align:center">{{ item.name }} - {{ item.protein }}{{ item.protein_units }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>

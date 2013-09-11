@@ -1,0 +1,51 @@
+#Logo
+{
+font:
+font-size:48px;
+text-transform:uppercase;
+text-decoration:none;
+text-align:center;
+color:33CCFF;
+text-shadow:2px 2px #FFFF66;
+word-spacing:3px;
+letter-spacing:1px;
+background-color:33CCFF;
+border-style:solid;
+border-color:FFFF66;
+}
+
+#navbar ul
+{
+text-align:center;
+width:auto;
+margin:auto;
+padding:0px;
+}
+
+#navbar a:link,a:visited
+{
+display:inline-block;
+float:right;		
+text-align:center;
+text-decoration:none;
+width:120px;
+height:20px;
+border-style:solid;
+border-color:33CCFF;
+background-color:33CCFF;
+color:white;
+margin:auto;
+}
+
+#navbar a:hover,a:active
+{
+border-color:FFFF66;
+background-color:FFFF66;
+color:33CCFF;
+}
+
+#navbar li
+{
+display:inline-block;
+margin:auto;
+}
