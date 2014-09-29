@@ -31,16 +31,23 @@ class CustomUserCreationForm(UserCreationForm):
 			('Very Active','Very Active'),
 			('Varsity Athlete','Varsity Athlete'),
 	)
+
+	GOAL_CHOICES = (
+		('Maintain Weight', 'Maintain Weight'),
+		('Gain Muscle', 'Gain Muscle'),
+		('Lose 1lb/Week', 'Lose 1lb/Week'),
+	)
 	
 	gender = forms.ChoiceField(GENDER_CHOICES)
 	age = forms.IntegerField()
 	weight = forms.IntegerField()
 	height = forms.IntegerField(label='Height (inches)')
 	activity_level = forms.ChoiceField(ACTIVITY_CHOICES)
+	weight_goal = forms.ChoiceField(GOAL_CHOICES)
 
 	class Meta:
 		model = User
-		fields = ('username', 'password1', 'password2', 'gender', 'age', 'weight', 'height')
+		fields = ('username', 'password1', 'password2', 'gender', 'age', 'weight', 'height', 'activity_level', 'weight_goal')
 	
 	def save(self, commit=True):
 		if not commit:
@@ -48,7 +55,7 @@ class CustomUserCreationForm(UserCreationForm):
 		user = super(UserCreationForm, self).save(commit=True)
 		user.set_password(self.cleaned_data["password1"])
 		user.save()
-		profile = Profile(user=user, gender=self.cleaned_data["gender"], age=self.cleaned_data["age"], weight=self.cleaned_data["weight"], height=self.cleaned_data["height"], activity_level=self.cleaned_data["activity_level"])
+		profile = Profile(user=user, gender=self.cleaned_data["gender"], age=self.cleaned_data["age"], weight=self.cleaned_data["weight"], height=self.cleaned_data["height"], activity_level=self.cleaned_data["activity_level"], weight_goal=self.cleaned_data["weight_goal"])
 		profile.save()
 		return user, profile
 		
@@ -78,8 +85,9 @@ class CustomSelectMultiple(widgets.CheckboxSelectMultiple):
 		    rendered_cb = cb.render(name, option_value)
 		    option_label = force_text(option_label)
 		    output.append(format_html('<tr class="success">'))
-		    output.append(format_html('<td><label{0}>{1} {2}</label></td>',
+		    output.append(format_html('<td><label{0}>{1} {2}</label>',
 		                              label_for, rendered_cb, option_label))
+		    output.append(format_html('<a href="/viewitem/' + option_value + '" target="_blank" style="float:right; color:black"><span class="glyphicon glyphicon-list"></span></a>'))
 		    output.append(format_html('</tr>'))
 		return mark_safe('\n'.join(output))
 
@@ -93,6 +101,15 @@ class AddBreakfastForm(forms.Form):
 	grill = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	hot_food_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	from_the_bakery = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        fruits = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        more_desserts = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        salad_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        cold_cereals = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        breads = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        miscellaneous_items = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        juice_and_milk = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        coffee_and_tea = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        condiments_and_sauces = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	
 	def __init__(self, *args, **kwargs):
 		self.user = kwargs.pop('user', None)
@@ -106,7 +123,15 @@ class AddBreakfastForm(forms.Form):
 		self.fields['pizza_oven'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Pizza Oven", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['grill'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Grill", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['hot_food_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Hot Food Bar", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['from_the_bakery'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="From the Bakery", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+		self.fields['fruits'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Fruit*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['more_desserts'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="More Desserts*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['salad_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Salad Bar*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['cold_cereals'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Cold Cereals*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['breads'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Breads*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['miscellaneous_items'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Miscellaneous Items*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['juice_and_milk'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Juice & Milk", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['coffee_and_tea'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Coffee & Tea", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['condiments_and_sauces'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Breakfast", category="Condiments & Sauces*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -173,6 +198,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+	                        self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -183,6 +209,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -193,6 +220,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -203,6 +231,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -213,6 +242,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -223,6 +253,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -233,6 +264,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -243,6 +275,7 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -253,10 +286,110 @@ class AddBreakfastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
-		return added_items
+                for item in self.cleaned_data['fruits']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Fruit*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['more_desserts']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="More Desserts*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['salad_bar']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Salad Bar*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['cold_cereals']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Cold Cereals*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['breads']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Breads*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['miscellaneous_items']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Miscellaneous Items*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['juice_and_milk']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Juice & Milk", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['coffee_and_tea']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Coffe & Tea", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['condiments_and_sauces']:
+                        item = Item.objects.filter(name=item, meal="Breakfast", category="Condiments & Sauces*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Breakfast")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                return added_items
 
 class AddLunchForm(forms.Form):
 	soups = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
@@ -268,6 +401,15 @@ class AddLunchForm(forms.Form):
 	grill = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	hot_food_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	from_the_bakery = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        fruits = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        more_desserts = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        salad_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        cold_cereals = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        breads = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        miscellaneous_items = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        juice_and_milk = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        coffee_and_tea = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        condiments_and_sauces = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	
 	def __init__(self, *args, **kwargs):
 		self.user = kwargs.pop('user', None)
@@ -282,6 +424,15 @@ class AddLunchForm(forms.Form):
 		self.fields['grill'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Grill", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['hot_food_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Hot Food Bar", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['from_the_bakery'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="From the Bakery", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['fruits'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Fruit*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['more_desserts'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="More Desserts*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['salad_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Salad Bar*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['cold_cereals'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Cold Cereals*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['breads'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Breads*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['miscellaneous_items'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Miscellaneous Items*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['juice_and_milk'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Juice & Milk", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['coffee_and_tea'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Coffee & Tea", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['condiments_and_sauces'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Lunch", category="Condiments & Sauces*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -348,6 +499,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -358,6 +510,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -368,6 +521,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -378,6 +532,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -388,6 +543,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -398,6 +554,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -408,6 +565,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -418,6 +576,7 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -428,10 +587,111 @@ class AddLunchForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
-		return added_items
+                for item in self.cleaned_data['fruits']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Fruit*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['more_desserts']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="More Desserts*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['salad_bar']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Salad Bar*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['cold_cereals']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Cold Cereals*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['breads']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Breads*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['miscellaneous_items']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Miscellaneous Items*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['juice_and_milk']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Juice & Milk", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['coffee_and_tea']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Coffee & Tea", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['condiments_and_sauces']:
+                        item = Item.objects.filter(name=item, meal="Lunch", category="Condiments & Sauces*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Lunch")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                return added_items
+
 
 class AddDinnerForm(forms.Form):	
 	soups = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
@@ -443,7 +703,16 @@ class AddDinnerForm(forms.Form):
 	grill = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	hot_food_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	from_the_bakery = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
-	
+        fruits = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        more_desserts = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        salad_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        cold_cereals = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        breads = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        miscellaneous_items = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        juice_and_milk = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        coffee_and_tea = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        condiments_and_sauces = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())	
+
 	def __init__(self, *args, **kwargs):
 		self.user = kwargs.pop('user', None)
 		self.datetime = kwargs.pop('datetime', None)
@@ -457,6 +726,15 @@ class AddDinnerForm(forms.Form):
 		self.fields['grill'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Grill", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['hot_food_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Hot Food Bar", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['from_the_bakery'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="From the Bakery", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['fruits'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Fruit*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['more_desserts'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="More Desserts*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['salad_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Salad Bar*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['cold_cereals'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Cold Cereals*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['breads'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Breads*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['miscellaneous_items'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Miscellaneous Items*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['juice_and_milk'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Juice & Milk", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['coffee_and_tea'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Coffee & Tea", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['condiments_and_sauces'].queryset = Item.objects.filter(restaurant="Dining Hall", meal="Dinner", category="Condiments & Sauces*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -521,6 +799,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -529,6 +808,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -537,6 +817,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -545,6 +826,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -553,6 +835,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -561,6 +844,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -569,6 +853,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -577,6 +862,7 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -585,13 +871,113 @@ class AddDinnerForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
-		return added_items
+                for item in self.cleaned_data['fruits']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Fruit*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['more_desserts']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="More Desserts*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['salad_bar']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Salad Bar*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['cold_cereals']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Cold Cereals*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['breads']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Breads*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['miscellaneous_items']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Miscellaneous Items*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['juice_and_milk']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Juice & Milk", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['coffee_and_tea']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Coffee & Tea", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['condiments_and_sauces']:
+                        item = Item.objects.filter(name=item, meal="Dinner", category="Condiments & Sauces*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Dinner")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                return added_items
+
 
 class AddSnacksForm(forms.Form):
-
 	
 	soups = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	prepared_salads = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
@@ -602,8 +988,15 @@ class AddSnacksForm(forms.Form):
 	grill = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	hot_food_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	from_the_bakery = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
-
-	
+        fruits = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        more_desserts = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        salad_bar = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        cold_cereals = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        breads = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        miscellaneous_items = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        juice_and_milk = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        coffee_and_tea = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        condiments_and_sauces = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
 	
 	def __init__(self, *args, **kwargs):
 		self.user = kwargs.pop('user', None)
@@ -619,6 +1012,15 @@ class AddSnacksForm(forms.Form):
 		self.fields['grill'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Grill", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['hot_food_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Hot Food Bar", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 		self.fields['from_the_bakery'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="From the Bakery", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['fruits'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Fruit*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['more_desserts'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="More Desserts*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['salad_bar'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Salad Bar*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['cold_cereals'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Cold Cereals*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['breads'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Breads*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['miscellaneous_items'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Miscellaneous Items*", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['juice_and_milk'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Juice & Milk", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['coffee_and_tea'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Coffee & Tea", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+                self.fields['condiments_and_sauces'].queryset = Item.objects.filter(restaurant="Dining Hall", meal=self.meal, category="Condiments & Sauces", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -683,6 +1085,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -691,6 +1094,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -699,6 +1103,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -707,6 +1112,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -715,6 +1121,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -723,6 +1130,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -731,6 +1139,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -739,6 +1148,7 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -747,10 +1157,111 @@ class AddSnacksForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
-		return added_items
+                for item in self.cleaned_data['fruits']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Fruit*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['more_desserts']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="More Desserts*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['salad_bar']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Salad Bar*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['cold_cereals']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Cold Cereals*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['breads']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Breads*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['miscellaneous_items']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Miscellaneous Items*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['juice_and_milk']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Juice & Milk", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['coffee_and_tea']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Coffee & Tea", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['condiments_and_sauces']:
+                        item = Item.objects.filter(name=item, meal=self.meal, category="Condiments & Sauces*", day=self.datetime.day, month=self.datetime.month, year=self.datetime.year)
+                        if len(item) > 0:
+                                item = item[0]
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal="Snacks")
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                return added_items
+
 
 class AddCafe1919Form(forms.Form):	
 	breakfast = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
@@ -767,14 +1278,14 @@ class AddCafe1919Form(forms.Form):
 		self.meal = kwargs.pop('meal', None)
 		self.datetime = kwargs.pop('datetime', None)
 		super(AddCafe1919Form, self).__init__(*args, **kwargs)
-		self.fields['breakfast'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Breakfast", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['pizzette'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Pizzette", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['panini'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Panini", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['insalate'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Insalate", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['lasagna'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Lasagna", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['sides'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Sides", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['bibite'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Bibite", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['dolce'].queryset = Item.objects.filter(restaurant="Cafe 1919", meal=self.meal, category="Dolce", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+		self.fields['breakfast'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Breakfast")
+		self.fields['pizzette'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Pizzette")
+		self.fields['panini'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Panini")
+		self.fields['insalate'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Insalate")
+		self.fields['lasagna'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Lasagna")
+		self.fields['sides'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Sides")
+		self.fields['bibite'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Bibite")
+		self.fields['dolce'].queryset = Item.objects.filter(restaurant="Cafe 1919", category="Dolce")
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -834,67 +1345,66 @@ class AddCafe1919Form(forms.Form):
 
 	def save(self, commit=True):
 		added_items = []
-		for item in self.cleaned_data['breakfast']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Breakfast")
-			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
-			if not created:
-				foodlog.portion += 1
-				foodlog.save()
-			self.additemtoprofile(self.user, item)
-			added_items.append(foodlog)
 		for item in self.cleaned_data['pizzette']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Pizzette")
+			item = Item.objects.get(name=item, category="Pizzette")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['panini']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Panini")
+			item = Item.objects.get(name=item, category="Panini")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['insalate']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Insalate")
+			item = Item.objects.get(name=item, category="Insalate")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['lasagna']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Lasagna")
+			item = Item.objects.get(name=item, category="Lasagna")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['sides']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Sides")
+			item = Item.objects.get(name=item, category="Sides")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['bibite']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Bibite")
+			item = Item.objects.get(name=item, category="Bibite")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['dolce']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Dolce")
+			item = Item.objects.get(name=item, category="Dolce")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -911,10 +1421,10 @@ class AddBruinCafeForm(forms.Form):
 		self.meal = kwargs.pop('meal', None)
 		self.datetime = kwargs.pop('datetime', None)
 		super(AddBruinCafeForm, self).__init__(*args, **kwargs)
-		self.fields['breakfast'].queryset = Item.objects.filter(restaurant="Bruin Cafe", meal=self.meal, category="Breakfast", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['lunch_and_dinner'].queryset = Item.objects.filter(restaurant="Bruin Cafe", meal=self.meal, category="Lunch & Dinner", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['coffee_tea_and_pastries'].queryset = Item.objects.filter(restaurant="Bruin Cafe", meal=self.meal, category="Coffee, Tea, & Pastries", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['drinks'].queryset = Item.objects.filter(restaurant="Bruin Cafe", meal=self.meal, category="Drinks", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+		self.fields['breakfast'].queryset = Item.objects.filter(restaurant="Bruin Cafe", category="Breakfast")
+		self.fields['lunch_and_dinner'].queryset = Item.objects.filter(restaurant="Bruin Cafe", category="Lunch & Dinner")
+		self.fields['coffee_tea_and_pastries'].queryset = Item.objects.filter(restaurant="Bruin Cafe", category="Coffee, Tea, & Pastries")
+		self.fields['drinks'].queryset = Item.objects.filter(restaurant="Bruin Cafe", category="Drinks")
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -975,34 +1485,38 @@ class AddBruinCafeForm(forms.Form):
 	def save(self, commit=True):
 		added_items = []
 		for item in self.cleaned_data['breakfast']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Breakfast")
+			item = Item.objects.get(name=item, category="Breakfast")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['lunch_and_dinner']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Lunch & Dinner")
+			item = Item.objects.get(name=item, category="Lunch & Dinner")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['coffee_tea_and_pastries']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Coffee, Tea, & Pastries")
+			item = Item.objects.get(name=item, category="Coffee, Tea, & Pastries")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['drinks']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Drinks")
+			item = Item.objects.get(name=item, category="Drinks")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1019,10 +1533,10 @@ class AddRendezvousForm(forms.Form):
 		self.meal = kwargs.pop('meal', None)
 		self.datetime = kwargs.pop('datetime', None)
 		super(AddRendezvousForm, self).__init__(*args, **kwargs)
-		self.fields['breakfast'].queryset = Item.objects.filter(restaurant="Rendezvous", meal=self.meal, category="Breakfast", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['mexican_entrees'].queryset = Item.objects.filter(restaurant="Rendezvous", meal=self.meal, category="Mexican Entrees", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['asian_entrees'].queryset = Item.objects.filter(restaurant="Rendezvous", meal=self.meal, category="Asian Entrees", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['daily_specials'].queryset = Item.objects.filter(restaurant="Rendezvous", meal=self.meal, category="Daily Specials", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+		self.fields['breakfast'].queryset = Item.objects.filter(restaurant="Rendezvous", category="Breakfast")
+		self.fields['mexican_entrees'].queryset = Item.objects.filter(restaurant="Rendezvous", category="Mexican Entrees")
+		self.fields['asian_entrees'].queryset = Item.objects.filter(restaurant="Rendezvous", category="Asian Entrees")
+		self.fields['daily_specials'].queryset = Item.objects.filter(restaurant="Rendezvous", category="Daily Specials")
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -1083,34 +1597,38 @@ class AddRendezvousForm(forms.Form):
 	def save(self, commit=True):
 		added_items = []
 		for item in self.cleaned_data['breakfast']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Breakfast")
+			item = Item.objects.get(name=item, category="Breakfast")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['mexican_entrees']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Mexican Entrees")
+			item = Item.objects.get(name=item, category="Mexican Entrees")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['asian_entrees']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Asian Entrees")
+			item = Item.objects.get(name=item, category="Asian Entrees")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['daily_specials']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Daily Specials")
+			item = Item.objects.get(name=item, category="Daily Specials")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1126,9 +1644,9 @@ class AddLateNightForm(forms.Form):
 		self.meal = kwargs.pop('meal', None)
 		self.datetime = kwargs.pop('datetime', None)
 		super(AddLateNightForm, self).__init__(*args, **kwargs)
-		self.fields['entrees'].queryset = Item.objects.filter(restaurant="De Neve Late Night", meal=self.meal, category="Entrees", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['sides_and_beverages'].queryset = Item.objects.filter(restaurant="De Neve Late Night", meal=self.meal, category="Sides & Beverages", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
-		self.fields['mypizza_and_wings'].queryset = Item.objects.filter(restaurant="De Neve Late Night", meal=self.meal, category="MyPizza & Wings", month=self.datetime.month, day=self.datetime.day, year=self.datetime.year)
+		self.fields['entrees'].queryset = Item.objects.filter(restaurant="De Neve Late Night", category="Entrees")
+		self.fields['sides_and_beverages'].queryset = Item.objects.filter(restaurant="De Neve Late Night", category="Sides & Beverages")
+		self.fields['mypizza_and_wings'].queryset = Item.objects.filter(restaurant="De Neve Late Night", category="MyPizza & Wings")
 
 	def addunits(self, num1, unit1, num2, unit2):
 		if unit2 == 'n/a':
@@ -1189,26 +1707,29 @@ class AddLateNightForm(forms.Form):
 	def save(self, commit=True):
 		added_items = []
 		for item in self.cleaned_data['entrees']:
-			item = Item.objects.get(name=item, meal=self.meal, category="entrees")
+			item = Item.objects.get(name=item, category="Entrees")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['sides_and_beverages']:
-			item = Item.objects.get(name=item, meal=self.meal, category="Sides & Beverages")
+			item = Item.objects.get(name=item, category="Sides & Beverages")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
 		for item in self.cleaned_data['mypizza_and_wings']:
-			item = Item.objects.get(name=item, meal=self.meal, category="MyPizza & Wings")
+			item = Item.objects.get(name=item, category="MyPizza & Wings")
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1267,7 +1788,7 @@ class AddFeastForm(forms.Form):
 		user.protein_remaining = self.subtractunits(user.protein_remaining, user.protein_units, item.protein, item.protein_units)
 		user.vitamin_A_remaining -= item.vitamin_A_dv
 		user.vitamin_C_remaining -= item.vitamin_C_dv
-		user.calcium_remaining -= item.calcium_dv
+		user.c -= item.calcium_dv
 		user.iron_remaining -= item.iron_dv
 		user.calories_eaten += item.calories
 		user.total_fat_eaten = self.addunits(user.total_fat_eaten, user.total_fat_units, item.total_fat, item.total_fat_units)
@@ -1297,6 +1818,7 @@ class AddFeastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1305,6 +1827,7 @@ class AddFeastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1313,6 +1836,7 @@ class AddFeastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1321,6 +1845,7 @@ class AddFeastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1329,6 +1854,7 @@ class AddFeastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
@@ -1337,7 +1863,131 @@ class AddFeastForm(forms.Form):
 			foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
 			if not created:
 				foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
 				foodlog.save()
 			self.additemtoprofile(self.user, item)
 			added_items.append(foodlog)
+		return added_items
+
+class AddFreestyleForm(forms.Form):
+        salads = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        sandwiches = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        wraps = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        desserts = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+        miscellaneous = ItemMultipleChoiceField(required=False, widget=CustomSelectMultiple, queryset=Item.objects.none())
+
+        def __init__(self, *args, **kwargs):
+                self.user = kwargs.pop('user', None)
+                self.meal = kwargs.pop('meal', None)
+                self.datetime = kwargs.pop('datetime', None)
+                super(AddFreestyleForm, self).__init__(*args, **kwargs)
+                self.fields['salads'].queryset = Item.objects.filter(restaurant="Freestyle", category="Salad")
+                self.fields['sandwiches'].queryset = Item.objects.filter(restaurant="Freestyle", category="Sandwiches")
+                self.fields['wraps'].queryset = Item.objects.filter(restaurant="Freestyle", category="Wraps")
+                self.fields['desserts'].queryset = Item.objects.filter(restaurant="Freestyle", category="Desserts")
+                self.fields['miscellaneous'].queryset = Item.objects.filter(restaurant="Freestyle", category="Miscellaneous")
+
+        def addunits(self, num1, unit1, num2, unit2):
+                if unit2 == 'n/a':
+                        return num1
+                elif unit1 == unit2:
+                        return num1 + num2
+                elif unit1 == 'g' and unit2 == 'mg':
+                        return num1 + (num2 / 1000.0)
+                elif unit1 == 'mg' and unit2 == 'g':
+                        return num1 + (num2 * 1000)
+
+        def subtractunits(self, num1, unit1, num2, unit2):
+                if unit2 == 'n/a':
+                        return num1
+                elif unit1 == unit2:
+                        return num1 - num2
+                elif unit1 == 'g' and unit2 == 'mg':
+                        return num1 - (num2 / 1000.0)
+                elif unit1 == 'mg' and unit2 == 'g':
+                        return num1 - (num2 * 1000)
+
+        def additemcalc(self, user, item):
+                user.calories_remaining -= item.calories
+                user.total_fat_remaining = self.subtractunits(user.total_fat_remaining, user.total_fat_units, item.total_fat, item.total_fat_units)
+                #user.saturated_fat_remaining = subtractunits(user.saturated_fat_remaining, user.saturated_fat_units, item.saturated_fat, item.saturated_fat_units)
+                #user.trans_fat_remaining = subtractunits(user.trans_fat_remaining, user.trans_fat_units, item.trans_fat, item.trans_fat_units)
+                user.cholesterol_remaining = self.subtractunits(user.cholesterol_remaining, user.cholesterol_units, item.cholesterol, item.cholesterol_units)
+                user.sodium_remaining = self.subtractunits(user.sodium_remaining, user.sodium_units, item.sodium, item.sodium_units)
+                user.total_carbs_remaining = self.subtractunits(user.total_carbs_remaining, user.total_carbs_units, item.total_carbs, item.total_carbs_units)
+                user.dietary_fiber_remaining = self.subtractunits(user.dietary_fiber_remaining, user.dietary_fiber_units, item.dietary_fiber, item.dietary_fiber_units)
+                #user.sugars_remaining = subtractunits(user.sugars_remaining, user.sugars_units, item.sugars, item.sugars_units)
+                user.protein_remaining = self.subtractunits(user.protein_remaining, user.protein_units, item.protein, item.protein_units)
+                user.vitamin_A_remaining -= item.vitamin_A_dv
+                user.vitamin_C_remaining -= item.vitamin_C_dv
+                user.calcium_remaining -= item.calcium_dv
+                user.iron_remaining -= item.iron_dv
+                user.calories_eaten += item.calories
+                user.total_fat_eaten = self.addunits(user.total_fat_eaten, user.total_fat_units, item.total_fat, item.total_fat_units)
+                #user.saturated_fat_eaten = addunits(user.saturated_fat_eaten, user.saturated_fat_units, item.saturated_fat, item.saturated_fat_units)
+                #user.trans_fat_eaten = addunits(user.trans_fat_eaten, user.trans_fat_units, item.trans_fat, item.trans_fat_units)
+                user.cholesterol_eaten = self.addunits(user.cholesterol_eaten, user.cholesterol_units, item.cholesterol, item.cholesterol_units)
+                user.sodium_eaten = self.addunits(user.sodium_eaten, user.sodium_units, item.sodium, item.sodium_units)
+                user.total_carbs_eaten = self.addunits(user.total_carbs_eaten, user.total_carbs_units, item.total_carbs, item.total_carbs_units)
+                user.dietary_fiber_eaten = self.addunits(user.dietary_fiber_eaten, user.dietary_fiber_units, item.dietary_fiber, item.dietary_fiber_units)
+                #user.sugars_eaten = addunits(user.sugars_eaten, user.sugars_units, item.sugars, item.sugars_units)
+                user.protein_eaten = self.addunits(user.protein_eaten, user.protein_units, item.protein, item.protein_units)
+                user.vitamin_A_eaten += item.vitamin_A_dv
+                user.vitamin_C_eaten += item.vitamin_C_dv
+                user.calcium_eaten += item.calcium_dv
+                user.iron_eaten += item.iron_dv
+                return
+
+        def additemtoprofile(self, user, item):
+                self.additemcalc(user.profile, item)
+                user.profile.save()
+                user.save()
+
+	def save(self, commit=True):
+                added_items = []
+                for item in self.cleaned_data['salads']:
+                        item = Item.objects.get(name=item, category="Salads")
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['sandwiches']:
+                        item = Item.objects.get(name=item, category="Sandwiches")
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['wraps']:
+                        item = Item.objects.get(name=item, category="Wraps")
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['desserts']:
+                        item = Item.objects.get(name=item, category="Desserts")
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
+                for item in self.cleaned_data['miscellaneous']:
+                        item = Item.objects.get(name=item, category="Miscellaneous")
+                        foodlog, created = FoodLog.objects.get_or_create(item=item, profile=self.user.profile, meal=self.meal)
+                        if not created:
+                                foodlog.portion += 1
+                                self.additemtoprofile(self.user, item)
+                                foodlog.save()
+                        self.additemtoprofile(self.user, item)
+                        added_items.append(foodlog)
 		return added_items

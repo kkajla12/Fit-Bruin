@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	{% block content %}
+	<head>
+		<dl>
+			<dt><h2 class="text-info">Most Popular</h2></dt>
+			<dd><h4 class="text-warning">View the most popular foods of the day</h4></dd>
+		</dl>
+	</head>
+	<body>
+		<div id="mostpopular">
+			<div class="row">
+				<div class="col-sm-3">
+				</div>
+				<div class="col-sm-6">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th class="well" style="text-align:center">Items</th>
+						</thead>	
+						<tbody>				
+						{% for log in items %}
+							<tr class="success">
+								<td style="text-align:center">{{ log.item.name }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<div class="col-sm-3">
+				</div>
+		</div>
+	</body>
+	{% endblock %}
+</html>

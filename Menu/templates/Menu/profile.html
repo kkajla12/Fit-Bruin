@@ -5,10 +5,17 @@
 <html>
 	{% block content %}
 	<head>
+	<div class="row">
+		<div class="col-md-10">
 		<dl>
 			<dt><h2 class="text-info">{{ user.username }}'s Fit Bruin Health Profile</h2></dt>
 			<dd><h4 class="text-warning">An overview of your daily nutrition. Choose to add items or view a detailed breakdown of your diet for today in the Foodlog</h4></dd>
 		</dl>
+		</div>
+		<div class="col-md-2 col-xs-2">
+			<a class="btn btn-success" href="mailto:fitbruin@gmail.com?Subject=Fit%20Bruin%20User%20Feedback" target="_top">Leave a Suggestion</a>
+		</div>
+	</div>
 	</head>
 	<body>	
 		<div id="profile" class="row">

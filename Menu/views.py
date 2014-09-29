@@ -1,5 +1,6 @@
 # Create your views here.
 import datetime
+from math import fabs
 
 from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpResponseNotFound
 from django.template import RequestContext, loader
@@ -12,7 +13,7 @@ from django.forms.util import ErrorList
 from Menu.models import Item
 from Menu.models import Profile
 from Menu.models import FoodLog
-from Menu.forms import CustomUserCreationForm, AddBreakfastForm, AddLunchForm, AddDinnerForm, AddSnacksForm, AddCafe1919Form, AddBruinCafeForm, AddRendezvousForm, AddLateNightForm, AddFeastForm
+from Menu.forms import CustomUserCreationForm, AddBreakfastForm, AddLunchForm, AddDinnerForm, AddSnacksForm, AddCafe1919Form, AddBruinCafeForm, AddRendezvousForm, AddLateNightForm, AddFeastForm, AddFreestyleForm
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
@@ -82,15 +83,15 @@ def additemcalc(user, item):
 	user.calcium_remaining -= item.calcium_dv
 	user.iron_remaining -= item.iron_dv
 	user.calories_eaten += item.calories
-	user.total_fat_eaten = addunits(user.total_fat_remaining, user.total_fat_units, item.total_fat, item.total_fat_units)
-	#user.saturated_fat_eaten = addunits(user.saturated_fat_remaining, user.saturated_fat_units, item.saturated_fat, item.saturated_fat_units)
-	#user.trans_fat_eaten = addunits(user.trans_fat_remaining, user.trans_fat_units, item.trans_fat, item.trans_fat_units)
-	user.cholesterol_eaten = addunits(user.cholesterol_remaining, user.cholesterol_units, item.cholesterol, item.cholesterol_units)
-	user.sodium_eaten = addunits(user.sodium_remaining, user.sodium_units, item.sodium, item.sodium_units)
-	user.total_carbs_eaten = addunits(user.total_carbs_remaining, user.total_carbs_units, item.total_carbs, item.total_carbs_units)
-	user.dietary_fiber_eaten = addunits(user.dietary_fiber_remaining, user.dietary_fiber_units, item.dietary_fiber, item.dietary_fiber_units)
-	#user.sugars_eaten = addunits(user.sugars_remaining, user.sugars_units, item.sugars, item.sugars_units)
-	user.protein_eaten = addunits(user.protein_remaining, user.protein_units, item.protein, item.protein_units)
+	user.total_fat_eaten = addunits(user.total_fat_eaten, user.total_fat_units, item.total_fat, item.total_fat_units)
+	#user.saturated_fat_eaten = addunits(user.saturated_fat_eaten, user.saturated_fat_units, item.saturated_fat, item.saturated_fat_units)
+	#user.trans_fat_eaten = addunits(user.trans_fat_eaten, user.trans_fat_units, item.trans_fat, item.trans_fat_units)
+	user.cholesterol_eaten = addunits(user.cholesterol_eaten, user.cholesterol_units, item.cholesterol, item.cholesterol_units)
+	user.sodium_eaten = addunits(user.sodium_eaten, user.sodium_units, item.sodium, item.sodium_units)
+	user.total_carbs_eaten = addunits(user.total_carbs_eaten, user.total_carbs_units, item.total_carbs, item.total_carbs_units)
+	user.dietary_fiber_eaten = addunits(user.dietary_fiber_eaten, user.dietary_fiber_units, item.dietary_fiber, item.dietary_fiber_units)
+	#user.sugars_eaten = addunits(user.sugars_eaten, user.sugars_units, item.sugars, item.sugars_units)
+	user.protein_eaten = addunits(user.protein_eaten, user.protein_units, item.protein, item.protein_units)
 	user.vitamin_A_eaten += item.vitamin_A_dv
 	user.vitamin_C_eaten += item.vitamin_C_dv
 	user.calcium_eaten += item.calcium_dv
@@ -141,17 +142,17 @@ def getuseritems(username):
 def getuser(username):
 	return User.objects.get(username=username).profile
 
-def additemtoprofile(user, itemname, meal, category):
-	item = Item.objects.get(name=itemname, meal=meal, category=category, day=getdate().day, month=getdate().month, year=getdate().year)
-	added = FoodLog.objects.create(item=item, profile=user.profile)
+def additemtoprofile(user, item):
 	additemcalc(user.profile, item)
+	user.profile.save()
+	user.save()
 
 def removeitemfromprofile(user, item):
 	removeitemcalc(user.profile, item)
 	user.save()
 	user.profile.save()
 
-def createnutrition(user_profile, age, gender, height, weight, activity):
+def createnutrition(user_profile, age, gender, height, weight, activity, goal):
 	activity_mult = 1	
 	if activity == "Lightly Active":
 		activity_mult = 1.2
@@ -161,21 +162,38 @@ def createnutrition(user_profile, age, gender, height, weight, activity):
 		activity_mult = 1.55
 	elif activity == "Varsity Athlete":
 		activity_mult = 1.9
+
+	cal_cut = 0
+	portions = [ .50, .25, .25 ]
+	if goal == "Gain Muscle":
+		cal_cut = -500
+		portions = [ .40, .40, .20 ]
+	elif goal == "Lose 1lb/Week":
+		cal_cut = 500
+		portions = [ .45, .35, .20 ]
 		
 	if gender == "Male":
-		user_profile.calories_limit = activity_mult * (88.362 + ((13.397 * (weight / 2.20462)) + (4.799 * (height * 2.54)) - (5.677 * age)))
+		user_profile.calories_limit = (activity_mult * (88.362 + ((13.397 * (weight / 2.20462)) + (4.799 * (height * 2.54)) - (5.677 * age)))) - cal_cut
 		user_profile.calories_remaining = user_profile.calories_limit
-		user_profile.protein_limit = 56
+		user_profile.total_carbs_limit = (portions[0] * user_profile.calories_limit) / 4
+		user_profile.total_carbs_remaining = user_profile.total_carbs_limit
+		user_profile.protein_limit = (portions[1] * user_profile.calories_limit) / 4
 		user_profile.protein_remaining = user_profile.protein_limit
+		user_profile.total_fat_limit = (portions[2] * user_profile.calories_limit) / 9
+		user_profile.total_fat_remaining = user_profile.total_fat_limit
 		user_profile.dietary_fiber_limit = 38
 		user_profile.dietary_fiber_remaining = user_profile.dietary_fiber_limit
 		user_profile.save()
 	elif gender == "Female":
-		user_profile.calories_limit = activity_mult * (447.593 + ((9.247 * (weight / 2.20462)) + (3.098 * (height * 2.54)) - (4.33 * age)))
+		user_profile.calories_limit = (activity_mult * (447.593 + ((9.247 * (weight / 2.20462)) + (3.098 * (height * 2.54)) - (4.33 * age)))) - cal_cut
 		user_profile.calories_remaining = user_profile.calories_limit
-		user_profile.protein_limit = 46
+		user_profile.total_carbs_limit = (portions[0] * user_profile.calories_limit) / 4
+		user_profile.total_carbs_remaining = user_profile.total_carbs_limit
+		user_profile.protein_limit = (portions[1] * user_profile.calories_limit) / 4
 		user_profile.protein_remaining = user_profile.protein_limit
-		user_profile.dietary_fiber_limit = 25
+		user_profile.total_fat_limit = (portions[2] * user_profile.calories_limit) / 9
+		user_profile.total_fat_remaining = user_profile.total_fat_limit
+		user_profile.dietary_fiber_limit = 38
 		user_profile.dietary_fiber_remaining = user_profile.dietary_fiber_limit
 		user_profile.save()
 	else:
@@ -198,7 +216,7 @@ def newuser(request):
 			new_user, new_user_profile = form.save()
 			username = form.cleaned_data["username"]
 			password = form.cleaned_data["password1"]
-			createnutrition(new_user_profile, new_user_profile.age, new_user_profile.gender, new_user_profile.height, new_user_profile.weight, new_user_profile.activity_level)
+			createnutrition(new_user_profile, new_user_profile.age, new_user_profile.gender, new_user_profile.height, new_user_profile.weight, new_user_profile.activity_level, new_user_profile.weight_goal)
 			new_user = authenticate(username=username, password=password)
 			if request.user.is_authenticated():		
 				login(request, new_user)
@@ -256,6 +274,10 @@ def additem(request):
 		return HttpResponseRedirect("/accounts/login/")
 
 def toptens(request):
+	date = datetime.datetime.today()
+	month = date.month
+	day = date.day
+	year = date.year
 	mostfatbreakfast = Item.objects.filter(meal="Breakfast", month=month, day=day, year=year).order_by('-total_fat')[:10]
 	mostcaloriesbreakfast = Item.objects.filter(meal="Breakfast", month=month, day=day, year=year).order_by('-calories')[:10]
 	mostproteinbreakfast = Item.objects.filter(meal="Breakfast", month=month, day=day, year=year).order_by('-protein')[:10]
@@ -266,8 +288,8 @@ def toptens(request):
 	mostcaloriesdinner = Item.objects.filter(meal="Dinner", month=month, day=day, year=year).order_by('-calories')[:10]
 	mostproteindinner = Item.objects.filter(meal="Dinner", month=month, day=day, year=year).order_by('-protein')[:10]
 	mostfatfeast = Item.objects.filter(restaurant="Feast at Rieber", month=month, day=day, year=year).order_by('-total_fat')[:10]
-	mostcaloriesfeast = Item.objects.filter(restaurant="Breakfast", month=month, day=day, year=year).order_by('-calories')[:10]
-	mostproteinfeast = Item.objects.filter(restaurant="Breakfast", month=month, day=day, year=year).order_by('-protein')[:10]
+	mostcaloriesfeast = Item.objects.filter(restaurant="Feast at Rieber", month=month, day=day, year=year).order_by('-calories')[:10]
+	mostproteinfeast = Item.objects.filter(restaurant="Feast at Rieber", month=month, day=day, year=year).order_by('-protein')[:10]
 	mostfatcafe1919 = Item.objects.filter(restaurant="Cafe 1919").order_by('-total_fat')[:10]
 	mostcaloriescafe1919 = Item.objects.filter(restaurant="Cafe 1919").order_by('-calories')[:10]
 	mostproteincafe1919 = Item.objects.filter(restaurant="Cafe 1919").order_by('-protein')[:10]
@@ -310,8 +332,40 @@ def toptens(request):
 	})
 	return HttpResponse(template.render(context))
 
+def mostpopular(request):
+	items = FoodLog.objects.all().order_by('-portion')[:15]
+	return render_to_response("mostpopular.html", items)
+
 def about(request):
 	return render_to_response("about.html", { 'user': request.user })
+
+def viewitem(request, itemid):
+	item = Item.objects.get(id=itemid)
+	return render_to_response("viewitem.html", { 'item': item })
+
+def updateportion(request, foodlogid, portion):
+	if request.is_ajax():
+		try:
+			foodlog = FoodLog.objects.get(pk=foodlogid)
+		except FoodLog.DoesNotExist:
+			raise Http404
+		portion = int(portion)
+		if portion <= 0:
+			return HttpResponse()
+		portiondiff = portion - foodlog.portion
+		foodlog.portion = portion
+		foodlog.save()
+		if portiondiff == 0:
+			return HttpResponse()
+		elif portiondiff > 0:
+			for i in range(int(fabs(portiondiff))):
+				additemtoprofile(request.user, foodlog.item)
+		elif portiondiff < 0:
+			for i in range(int(fabs(portiondiff))):
+				removeitemfromprofile(request.user, foodlog.item)
+		return HttpResponse()
+	else:
+		return HttpResponseNotFound('<h1><center>404: Page not found</center></h1>')
 
 def deletefoodlog(request, foodlogid):
 	if request.is_ajax():
@@ -320,12 +374,9 @@ def deletefoodlog(request, foodlogid):
 		except FoodLog.DoesNotExist:
 			raise Http404
 		user = request.user
-		removeitemfromprofile(user, foodlog.item)
-		if foodlog.portion <= 1:
-			foodlog.delete()
-		elif foodlog.portion > 1:
-			foodlog.portion -= 1
-			foodlog.save()
+		for i in range(foodlog.portion):
+			removeitemfromprofile(user, foodlog.item)
+		foodlog.delete()
 		return HttpResponse()
 	else:
 		return HttpResponseNotFound('<h1><center>404: Page not found</center></h1>')
@@ -535,6 +586,27 @@ def addlatenight(request):
 		return render_to_response("addlatenight.html", args)
 	else:
 		return HttpResponseRedirect("/accounts/login/")
+
+def addfreestyle(request):
+        if request.user.is_authenticated():
+                if request.method == 'POST':
+                        form = AddFreestyleForm(request.POST, user=request.user, meal=getmealtime(), datetime=getdate())
+                        if form.is_valid():
+                                print "form is valid"
+                                print form.cleaned_data
+                                added_items = form.save()
+                        return HttpResponseRedirect("/foodlog/")
+                args = {}
+                args.update(csrf(request))
+
+                args['user'] = request.user
+                args['form'] = AddFreestyleForm(meal=getmealtime(), datetime=getdate())
+                args['date'] = getdate().date()
+                args['meal'] = getmealtime()
+
+                return render_to_response("freestyle.html", args)
+        else:
+                return HttpResponseRedirect("/accounts/login/")
 
 def DiningHalls(request):
 	template = loader.get_template('Menu/DiningHalls.html')

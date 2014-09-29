@@ -1,0 +1,891 @@
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211] mod_wsgi (pid=16560): Exception occurred processing WSGI script '/home/ubuntu/UclaCalorieCounter/django.wsgi'., referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211] Traceback (most recent call last):, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 255, in __call__, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     response = self.get_response(request), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 178, in get_response, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 220, in handle_uncaught_exception, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     if resolver.urlconf_module is None:, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 342, in urlconf_module, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     self._urlconf_module = import_module(self.urlconf_name), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     __import__(name), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/UclaCalorieCounter/urls.py", line 7, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     from Menu import views, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/Menu/views.py", line 16, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     from Menu.forms import CustomUserCreationForm, AddBreakfastForm, AddLunchForm, AddDinnerForm, AddSnacksForm, AddCafe1919Form, AddBruinCafeForm, AddRendezvousForm, AddLateNightForm, AddFeastForm, AddFreestyleForm, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/Menu/forms.py", line 1946, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]     def save(self, commit=True):, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211]                                ^, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:23:00 2013] [error] [client 128.97.179.211] IndentationError: unindent does not match any outer indentation level, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224] mod_wsgi (pid=16559): Exception occurred processing WSGI script '/home/ubuntu/UclaCalorieCounter/django.wsgi'.
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224] Traceback (most recent call last):
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 255, in __call__
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     response = self.get_response(request)
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 178, in get_response
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 220, in handle_uncaught_exception
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     if resolver.urlconf_module is None:
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 342, in urlconf_module
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     self._urlconf_module = import_module(self.urlconf_name)
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     __import__(name)
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/home/ubuntu/UclaCalorieCounter/UclaCalorieCounter/urls.py", line 7, in <module>
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     from Menu import views
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/home/ubuntu/UclaCalorieCounter/Menu/views.py", line 16, in <module>
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     from Menu.forms import CustomUserCreationForm, AddBreakfastForm, AddLunchForm, AddDinnerForm, AddSnacksForm, AddCafe1919Form, AddBruinCafeForm, AddRendezvousForm, AddLateNightForm, AddFeastForm, AddFreestyleForm
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]   File "/home/ubuntu/UclaCalorieCounter/Menu/forms.py", line 1946
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]     def save(self, commit=True):
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224]                                ^
+[Sun Oct 13 22:26:32 2013] [error] [client 66.249.74.224] IndentationError: unindent does not match any outer indentation level
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211] mod_wsgi (pid=16633): Exception occurred processing WSGI script '/home/ubuntu/UclaCalorieCounter/django.wsgi'., referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211] Traceback (most recent call last):, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 255, in __call__, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     response = self.get_response(request), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 178, in get_response, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 220, in handle_uncaught_exception, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     if resolver.urlconf_module is None:, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 342, in urlconf_module, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     self._urlconf_module = import_module(self.urlconf_name), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     __import__(name), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/UclaCalorieCounter/urls.py", line 7, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     from Menu import views, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/Menu/views.py", line 16, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     from Menu.forms import CustomUserCreationForm, AddBreakfastForm, AddLunchForm, AddDinnerForm, AddSnacksForm, AddCafe1919Form, AddBruinCafeForm, AddRendezvousForm, AddLateNightForm, AddFeastForm, AddFreestyleForm, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/Menu/forms.py", line 1872, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211]     class AddFreestyleForm(forms.form):, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:11 2013] [error] [client 128.97.179.211] AttributeError: 'module' object has no attribute 'form', referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211] mod_wsgi (pid=16632): Exception occurred processing WSGI script '/home/ubuntu/UclaCalorieCounter/django.wsgi'., referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211] Traceback (most recent call last):, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 255, in __call__, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     response = self.get_response(request), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 178, in get_response, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 220, in handle_uncaught_exception, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     if resolver.urlconf_module is None:, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 342, in urlconf_module, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     self._urlconf_module = import_module(self.urlconf_name), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     __import__(name), referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/UclaCalorieCounter/urls.py", line 7, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     from Menu import views, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/Menu/views.py", line 16, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     from Menu.forms import CustomUserCreationForm, AddBreakfastForm, AddLunchForm, AddDinnerForm, AddSnacksForm, AddCafe1919Form, AddBruinCafeForm, AddRendezvousForm, AddLateNightForm, AddFeastForm, AddFreestyleForm, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]   File "/home/ubuntu/UclaCalorieCounter/Menu/forms.py", line 1872, in <module>, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211]     class AddFreestyleForm(forms.form):, referer: http://fitbruin.com/addsnacks/
+[Sun Oct 13 22:27:12 2013] [error] [client 128.97.179.211] AttributeError: 'module' object has no attribute 'form', referer: http://fitbruin.com/addsnacks/
+[Sun Jun 29 08:25:21 2014] [error] [client 212.71.237.16] File does not exist: /home/ubuntu/UclaCalorieCounter/static/images/Bear
+[Wed Jul 02 11:14:00 2014] [error] [client 173.255.198.138] File does not exist: /home/ubuntu/UclaCalorieCounter/static/images/Bear
+[Wed Jul 30 21:13:35.542318 2014] [authz_core:error] [pid 1576:tid 140701106956032] [client 68.119.155.115:63599] AH01630: client denied by server configuration: /home/ubuntu/UclaCalorieCounter/django.wsgi
+[Thu Jul 31 07:45:57.981719 2014] [:error] [pid 1736:tid 139728046978816] [client 222.186.56.18:2387] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Jul 31 20:03:21.191126 2014] [:error] [pid 1736:tid 139727902570240] [client 107.22.80.231:34898] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 01 03:43:08.222585 2014] [:error] [pid 1734:tid 139727860606720] [client 198.133.224.185:43839] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://www.google.com
+[Fri Aug 01 03:43:08.377497 2014] [:error] [pid 1736:tid 139727944533760] [client 198.133.224.185:43846] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: https://sites.google.com/site/whowasproject/
+[Fri Aug 01 14:18:15.051042 2014] [:error] [pid 1736:tid 139728063764224] [client 107.22.50.242:45635] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 02 02:59:54.351881 2014] [:error] [pid 1736:tid 139727860606720] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 02 05:56:07.920899 2014] [:error] [pid 1734:tid 139728072156928] [client 82.221.109.194:53838] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 02 14:29:59.424722 2014] [:error] [pid 1736:tid 139727944533760] [client 23.20.195.127:35077] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 02 16:29:54.491047 2014] [:error] [pid 1734:tid 139727852214016] [client 93.174.95.55:43088] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 02 20:58:16.821087 2014] [:error] [pid 1736:tid 139727860606720] [client 117.21.191.208:3464] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 02 22:30:56.641868 2014] [:error] [pid 1734:tid 139728072156928] [client 198.133.224.185:44354] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://www.google.com
+[Sat Aug 02 22:30:56.791274 2014] [:error] [pid 1736:tid 139727843821312] [client 198.133.224.185:44359] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: https://sites.google.com/site/whowasproject/
+[Sun Aug 03 04:19:29.633163 2014] [:error] [pid 1736:tid 139727818643200] [client 89.248.172.204:55231] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:29.933946 2014] [:error] [pid 1734:tid 139727952926464] [client 89.248.172.204:49948] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:30.238751 2014] [:error] [pid 1736:tid 139727810250496] [client 89.248.172.204:59319] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:30.541561 2014] [:error] [pid 1734:tid 139727936141056] [client 89.248.172.204:40737] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:30.843089 2014] [:error] [pid 1736:tid 139727801857792] [client 89.248.172.204:50544] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:31.152172 2014] [:error] [pid 1734:tid 139727927748352] [client 89.248.172.204:59272] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:31.454458 2014] [:error] [pid 1736:tid 139728063764224] [client 89.248.172.204:41473] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:31.763822 2014] [:error] [pid 1734:tid 139727919355648] [client 89.248.172.204:50592] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:32.065617 2014] [:error] [pid 1736:tid 139728072156928] [client 89.248.172.204:60311] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:32.371455 2014] [:error] [pid 1734:tid 139728055371520] [client 89.248.172.204:41169] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:32.690936 2014] [:error] [pid 1736:tid 139727902570240] [client 89.248.172.204:51084] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:33.003380 2014] [:error] [pid 1734:tid 139727910962944] [client 89.248.172.204:60704] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:33.306843 2014] [:error] [pid 1736:tid 139727936141056] [client 89.248.172.204:41727] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:33.610511 2014] [:error] [pid 1734:tid 139727902570240] [client 89.248.172.204:51768] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:33.913542 2014] [:error] [pid 1736:tid 139727927748352] [client 89.248.172.204:32768] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 04:19:34.222266 2014] [:error] [pid 1734:tid 139727894177536] [client 89.248.172.204:41963] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 08:23:03.693202 2014] [:error] [pid 20123:tid 139727952926464] [client 117.27.158.108:2614] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 03 22:42:19.021653 2014] [:error] [pid 20122:tid 139727961319168] [client 88.206.30.47:52522] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 04:18:54.073233 2014] [:error] [pid 20122:tid 139727843821312] [client 69.90.132.43:40512] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 04:52:21.834385 2014] [:error] [pid 20123:tid 139727835428608] [client 115.239.248.56:1929] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 07:03:51.528462 2014] [:error] [pid 20122:tid 139727818643200] [client 193.174.89.19:53359] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 10:55:07.839060 2014] [:error] [pid 20122:tid 139727936141056] [client 222.186.40.229:1165] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 13:48:04.386671 2014] [cgid:error] [pid 20122:tid 139728055371520] [client 80.82.78.12:35029] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Mon Aug 04 13:48:04.710292 2014] [cgid:error] [pid 20123:tid 139727919355648] [client 80.82.78.12:35505] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Mon Aug 04 13:48:05.035001 2014] [cgid:error] [pid 20122:tid 139727969711872] [client 80.82.78.12:36057] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Mon Aug 04 13:48:05.358448 2014] [cgid:error] [pid 20123:tid 139727910962944] [client 80.82.78.12:36536] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Mon Aug 04 13:48:05.683438 2014] [cgid:error] [pid 20122:tid 139727961319168] [client 80.82.78.12:37022] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Mon Aug 04 14:20:07.650999 2014] [:error] [pid 20122:tid 139727910962944] [client 183.129.255.34:3821] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 16:50:59.406266 2014] [:error] [pid 20123:tid 139727827035904] [client 75.101.197.159:59181] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 17:27:14.061231 2014] [:error] [pid 20122:tid 139727868999424] [client 93.174.95.55:44815] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 20:03:17.466864 2014] [:error] [pid 20123:tid 139727860606720] [client 117.21.226.160:2776] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 20:07:08.905300 2014] [:error] [pid 20122:tid 139727835428608] [client 54.183.136.255:33947] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 21:15:37.641267 2014] [:error] [pid 20123:tid 139727810250496] [client 142.91.252.118:36349] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 21:15:43.665585 2014] [:error] [pid 20122:tid 139727818643200] [client 142.91.252.118:40430] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 21:15:43.690657 2014] [:error] [pid 20123:tid 139727818643200] [client 142.91.252.118:40446] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 21:15:43.715264 2014] [:error] [pid 20122:tid 139727810250496] [client 142.91.252.118:40459] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 04 23:24:15.250762 2014] [:error] [pid 20123:tid 139728072156928] [client 222.186.40.219:1602] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 05 05:34:31.746529 2014] [:error] [pid 20123:tid 139728046978816] [client 115.239.248.56:1503] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 05 12:12:37.567558 2014] [:error] [pid 20123:tid 139727910962944] [client 117.21.226.160:1512] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 05 19:34:15.513487 2014] [:error] [pid 20123:tid 139727835428608] [client 117.21.226.160:4102] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 05 20:27:13.419503 2014] [core:error] [pid 20122:tid 139727810250496] [client 89.248.160.212:44489] AH00126: Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Tue Aug 05 20:27:13.755545 2014] [cgid:error] [pid 20123:tid 139727818643200] [client 89.248.160.212:44621] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Tue Aug 05 20:27:14.082659 2014] [cgid:error] [pid 20122:tid 139727818643200] [client 89.248.160.212:44740] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Tue Aug 05 20:27:14.409165 2014] [cgid:error] [pid 20123:tid 139727843821312] [client 89.248.160.212:44866] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Tue Aug 05 20:27:14.735440 2014] [cgid:error] [pid 20122:tid 139727801857792] [client 89.248.160.212:44988] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Tue Aug 05 20:27:15.060217 2014] [cgid:error] [pid 20123:tid 139728072156928] [client 89.248.160.212:45109] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Wed Aug 06 02:59:35.087454 2014] [:error] [pid 20123:tid 139728046978816] [client 117.21.226.160:2081] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 06 04:00:29.222201 2014] [:error] [pid 20122:tid 139727919355648] [client 222.186.40.219:4929] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 06 11:39:35.086281 2014] [:error] [pid 20123:tid 139727885784832] [client 122.226.223.85:4814] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 06 12:57:29.112573 2014] [:error] [pid 20122:tid 139727868999424] [client 117.21.226.160:4275] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 06 13:50:04.746947 2014] [:error] [pid 20122:tid 139727852214016] [client 117.27.158.108:3441] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 06 23:14:33.539105 2014] [:error] [pid 20123:tid 139728046978816] [client 117.27.158.108:1358] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:00.575768 2014] [:error] [pid 20123:tid 139727919355648] [client 89.248.172.204:59678] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:00.877515 2014] [:error] [pid 20122:tid 139727961319168] [client 89.248.172.204:41365] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:01.177829 2014] [:error] [pid 20123:tid 139727910962944] [client 89.248.172.204:51099] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:01.479681 2014] [:error] [pid 20122:tid 139727969711872] [client 89.248.172.204:60227] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:01.783333 2014] [:error] [pid 20123:tid 139727902570240] [client 89.248.172.204:40847] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:02.084144 2014] [:error] [pid 20122:tid 139727910962944] [client 89.248.172.204:51218] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:02.386911 2014] [:error] [pid 20123:tid 139727894177536] [client 89.248.172.204:60764] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:02.690594 2014] [:error] [pid 20122:tid 139727902570240] [client 89.248.172.204:41524] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:02.991586 2014] [:error] [pid 20123:tid 139728063764224] [client 89.248.172.204:51523] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:03.292691 2014] [:error] [pid 20122:tid 139727885784832] [client 89.248.172.204:33075] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:03.593492 2014] [:error] [pid 20123:tid 139727885784832] [client 89.248.172.204:42052] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:03.896559 2014] [:error] [pid 20122:tid 139727894177536] [client 89.248.172.204:51685] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:04.198428 2014] [:error] [pid 20123:tid 139727877392128] [client 89.248.172.204:33199] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:04.499692 2014] [:error] [pid 20122:tid 139727877392128] [client 89.248.172.204:42320] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:04.803100 2014] [:error] [pid 20123:tid 139727868999424] [client 89.248.172.204:51466] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 02:49:05.104171 2014] [:error] [pid 20122:tid 139727860606720] [client 89.248.172.204:33248] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 10:05:45.473088 2014] [:error] [pid 20123:tid 139727810250496] [client 107.22.67.189:36429] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 15:15:49.438180 2014] [:error] [pid 20122:tid 139727927748352] [client 82.221.109.194:35081] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 07 21:04:25.038510 2014] [:error] [pid 20123:tid 139727885784832] [client 117.21.226.160:1220] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 08 02:49:03.959872 2014] [:error] [pid 20122:tid 139727843821312] [client 213.227.57.58:36373] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 08 02:49:05.892228 2014] [:error] [pid 20123:tid 139727860606720] [client 213.227.57.58:37184] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 08 02:49:15.984833 2014] [:error] [pid 20122:tid 139727835428608] [client 213.227.57.58:39414] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 08 06:46:28.312879 2014] [:error] [pid 20123:tid 139727818643200] [client 217.31.48.30:36950] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 08 07:41:57.189118 2014] [:error] [pid 20122:tid 139727818643200] [client 117.21.226.160:2389] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 08 10:27:53.567974 2014] [:error] [pid 20122:tid 139727936141056] [client 222.186.40.229:1773] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 08 23:59:07.948136 2014] [:error] [pid 20122:tid 139727969711872] [client 117.21.191.205:3148] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 09 02:33:02.551915 2014] [:error] [pid 20123:tid 139727877392128] [client 23.99.102.96:1113] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 09 14:08:31.548919 2014] [:error] [pid 20123:tid 139727952926464] [client 174.78.159.74:8371] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 09 14:08:31.628437 2014] [:error] [pid 20123:tid 139727952926464] [client 174.78.159.74:8371] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 09 16:46:52.379423 2014] [:error] [pid 20123:tid 139727927748352] [client 23.22.13.205:58513] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 09 22:43:22.094900 2014] [:error] [pid 20122:tid 139727910962944] [client 218.94.26.51:2965] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://www.baidu.com/
+[Sun Aug 10 04:09:36.593155 2014] [:error] [pid 20123:tid 139727827035904] [client 162.242.146.223:21786] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 04:27:29.739013 2014] [:error] [pid 20122:tid 139727852214016] [client 117.21.226.160:3034] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 07:16:00.261739 2014] [:error] [pid 8108:tid 139727969711872] [client 198.143.128.146:2005] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 07:16:00.335489 2014] [:error] [pid 8108:tid 139727969711872] [client 198.143.128.146:2005] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 08:10:47.414819 2014] [:error] [pid 8108:tid 139728046978816] [client 222.186.40.219:1271] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 11:14:12.871618 2014] [:error] [pid 8109:tid 139728046978816] [client 54.91.24.255:50793] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 15:18:41.491843 2014] [:error] [pid 8108:tid 139727927748352] [client 211.115.201.98:43710] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 20:52:29.752370 2014] [:error] [pid 8109:tid 139727877392128] [client 200.68.124.129:55243] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 21:34:39.440400 2014] [:error] [pid 8108:tid 139727852214016] [client 54.201.202.242:50669] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 10 23:47:12.234284 2014] [:error] [pid 8108:tid 139727835428608] [client 93.174.93.218:60430] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 11 00:20:28.789948 2014] [:error] [pid 8108:tid 139727818643200] [client 222.186.40.219:2044] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 11 01:31:21.374718 2014] [cgid:error] [pid 8108:tid 139728055371520] [client 119.18.109.10:3021] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/wlogin.cgi
+[Mon Aug 11 04:40:48.136348 2014] [:error] [pid 8109:tid 139727827035904] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 11 05:39:50.340647 2014] [:error] [pid 8108:tid 139728072156928] [client 125.96.160.190:51025] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 11 16:13:16.755100 2014] [:error] [pid 8108:tid 139727952926464] [client 188.226.160.29:33147] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 11 16:17:58.959965 2014] [:error] [pid 8109:tid 139727801857792] [client 94.127.232.16:59325] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 11 16:28:15.438398 2014] [:error] [pid 8108:tid 139727919355648] [client 54.201.4.159:43419] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 11 23:05:27.054789 2014] [:error] [pid 8108:tid 139728055371520] [client 184.173.172.150:47618] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 12 02:38:47.115193 2014] [:error] [pid 8109:tid 139727894177536] [client 222.186.40.219:2554] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 12 05:52:43.147532 2014] [:error] [pid 8109:tid 139727818643200] [client 119.10.114.231:37698] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 12 16:06:36.755186 2014] [:error] [pid 8108:tid 139727894177536] [client 210.17.38.217:34236] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 12 19:46:11.685889 2014] [:error] [pid 4049:tid 139728051025664] [client 23.20.195.127:43569] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 12 20:29:02.867693 2014] [:error] [pid 4050:tid 139727927748352] [client 117.21.226.160:1229] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 12 22:22:04.887158 2014] [:error] [pid 5019:tid 140536027543296] [client 68.119.155.115:54079] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 12 22:22:05.027123 2014] [:error] [pid 5019:tid 140536027543296] [client 68.119.155.115:54079] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 13 02:40:35.718058 2014] [:error] [pid 5019:tid 140535985579776] [client 222.186.40.230:4712] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 13 04:29:11.007904 2014] [cgid:error] [pid 5019:tid 140535977187072] [client 221.194.47.232:3221] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Wed Aug 13 04:29:11.742941 2014] [cgid:error] [pid 5020:tid 140535952008960] [client 221.194.47.232:3256] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Wed Aug 13 04:29:12.483984 2014] [cgid:error] [pid 5019:tid 140535968794368] [client 221.194.47.232:3289] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Wed Aug 13 04:29:13.211519 2014] [cgid:error] [pid 5020:tid 140535943616256] [client 221.194.47.232:3325] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Wed Aug 13 04:29:13.902975 2014] [cgid:error] [pid 5019:tid 140535960401664] [client 221.194.47.232:3366] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Wed Aug 13 10:35:20.515757 2014] [:error] [pid 5020:tid 140535893260032] [client 104.131.210.220:39727] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 13 12:24:51.155448 2014] [:error] [pid 5019:tid 140535876474624] [client 200.57.232.172:44848] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 13 12:45:53.077870 2014] [:error] [pid 5020:tid 140535868081920] [client 104.131.193.211:38053] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 13 14:45:53.414889 2014] [:error] [pid 5019:tid 140535884867328] [client 104.131.193.65:53272] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 13 15:56:26.780218 2014] [:error] [pid 5020:tid 140536127158016] [client 162.242.146.223:53533] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 13 19:25:16.748659 2014] [:error] [pid 5019:tid 140535985579776] [client 54.242.13.140:53333] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 00:01:59.121797 2014] [:error] [pid 5020:tid 140535952008960] [client 62.210.231.35:39305] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 04:44:54.313525 2014] [:error] [pid 5020:tid 140535868081920] [client 221.122.66.199:10415] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 04:56:02.095795 2014] [:error] [pid 5019:tid 140535918438144] [client 104.131.193.193:35694] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 09:46:39.767690 2014] [:error] [pid 5019:tid 140535884867328] [client 162.242.146.223:20213] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 12:33:28.962961 2014] [:error] [pid 5019:tid 140536027543296] [client 117.21.225.176:2558] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 13:03:29.300949 2014] [:error] [pid 5020:tid 140536002365184] [client 54.80.230.116:40024] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 13:53:19.113388 2014] [:error] [pid 5019:tid 140536110372608] [client 183.136.216.100:3047] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 15:15:28.481795 2014] [:error] [pid 5019:tid 140535993972480] [client 80.86.85.99:56219] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 15:15:28.806831 2014] [:error] [pid 5020:tid 140535943616256] [client 80.86.85.99:56306] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 15:15:29.130114 2014] [:error] [pid 5019:tid 140535985579776] [client 80.86.85.99:56398] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 15:15:29.453448 2014] [:error] [pid 5020:tid 140535935223552] [client 80.86.85.99:56483] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 15:15:29.776662 2014] [:error] [pid 5019:tid 140536127158016] [client 80.86.85.99:56573] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 15:15:30.100643 2014] [:error] [pid 5020:tid 140535926830848] [client 80.86.85.99:56669] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 21:37:13.000060 2014] [:error] [pid 5020:tid 140536135550720] [client 115.239.248.56:1437] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 21:44:25.013804 2014] [:error] [pid 5019:tid 140535901652736] [client 126.117.91.101:61307] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 23:03:48.613153 2014] [:error] [pid 5020:tid 140536110372608] [client 61.19.246.190:41885] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 23:03:49.036830 2014] [:error] [pid 5019:tid 140536143943424] [client 61.19.246.190:41965] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 23:03:49.448181 2014] [:error] [pid 5020:tid 140535993972480] [client 61.19.246.190:42042] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 23:03:49.871944 2014] [:error] [pid 5019:tid 140536027543296] [client 61.19.246.190:42116] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 23:03:50.295555 2014] [:error] [pid 5020:tid 140536118765312] [client 61.19.246.190:42190] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 14 23:03:50.719450 2014] [:error] [pid 5019:tid 140536110372608] [client 61.19.246.190:42265] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 15 04:19:16.797833 2014] [:error] [pid 5019:tid 140535993972480] [client 222.186.56.18:3902] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 15 05:41:04.424902 2014] [:error] [pid 5020:tid 140535943616256] [client 121.226.45.224:50088] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://hotel.qunar.com/
+[Fri Aug 15 08:25:11.189981 2014] [:error] [pid 5020:tid 140535918438144] [client 54.167.254.3:60260] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 15 14:02:36.624717 2014] [:error] [pid 5020:tid 140536027543296] [client 162.253.66.76:57542] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 15 19:19:04.930214 2014] [:error] [pid 5020:tid 140536118765312] [client 117.21.225.176:3770] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 16 00:50:41.728623 2014] [:error] [pid 5019:tid 140535910045440] [client 54.167.240.123:58577] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 16 08:14:37.046231 2014] [:error] [pid 5020:tid 140536019150592] [client 31.184.192.165:23514] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 16 14:34:59.741629 2014] [:error] [pid 5020:tid 140535977187072] [client 54.90.250.124:32817] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 16 18:53:05.321876 2014] [:error] [pid 5019:tid 140535943616256] [client 162.253.66.74:54351] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 16 23:17:02.782329 2014] [:error] [pid 5019:tid 140535926830848] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 17 06:59:24.465116 2014] [:error] [pid 18001:tid 140536118765312] [client 23.22.54.195:53077] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 17 11:40:37.330733 2014] [:error] [pid 18005:tid 140536002365184] [client 62.210.38.226:43151] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 17 17:17:05.863852 2014] [:error] [pid 18000:tid 140536010757888] [client 104.131.211.39:34475] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 02:04:45.814200 2014] [:error] [pid 18000:tid 140535968794368] [client 157.55.39.229:55433] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 02:06:37.803948 2014] [:error] [pid 18005:tid 140536135550720] [client 157.55.39.37:15324] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 11:52:57.818497 2014] [:error] [pid 18000:tid 140535868081920] [client 111.206.199.163:47199] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 13:40:52.024656 2014] [:error] [pid 18000:tid 140535901652736] [client 54.167.93.82:54873] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 15:33:27.618167 2014] [:error] [pid 18005:tid 140536143943424] [client 181.112.151.211:53415] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 18:17:41.807328 2014] [:error] [pid 18005:tid 140536027543296] [client 117.21.225.137:2259] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 18:36:29.159302 2014] [:error] [pid 18005:tid 140536110372608] [client 54.77.143.64:53377] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 21:39:33.356368 2014] [:error] [pid 18005:tid 140536019150592] [client 222.186.59.62:4380] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 18 21:58:14.252000 2014] [:error] [pid 18005:tid 140536118765312] [client 117.21.226.160:2687] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 19 00:09:42.263488 2014] [:error] [pid 18000:tid 140536019150592] [client 68.119.155.115:62998] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 19 00:09:42.410975 2014] [:error] [pid 18000:tid 140536019150592] [client 68.119.155.115:62998] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 19 09:07:47.280443 2014] [:error] [pid 18001:tid 140535968794368] [client 65.207.23.201:38577] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 19 10:02:09.135772 2014] [:error] [pid 18000:tid 140535943616256] [client 111.206.199.163:36787] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 19 11:37:47.256981 2014] [:error] [pid 18001:tid 140535926830848] [client 62.210.231.35:56888] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 19 13:49:47.112171 2014] [:error] [pid 18005:tid 140535893260032] [client 54.90.104.109:57350] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 19 23:58:01.665600 2014] [:error] [pid 18000:tid 140535884867328] [client 24.215.85.18:62463] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 20 00:22:55.130751 2014] [:error] [pid 18000:tid 140535901652736] [client 93.115.92.169:33361] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 20 00:22:55.625539 2014] [:error] [pid 18001:tid 140536110372608] [client 93.115.92.169:33598] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 20 02:19:36.786346 2014] [:error] [pid 18000:tid 140535910045440] [client 222.186.56.18:4344] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 20 05:33:34.129640 2014] [:error] [pid 18005:tid 140536019150592] [client 218.245.6.22:3490] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 20 09:23:58.458537 2014] [:error] [pid 18005:tid 140536010757888] [client 115.239.248.56:2941] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 20 10:42:26.300397 2014] [:error] [pid 18001:tid 140535993972480] [client 54.82.244.128:48552] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 20 17:39:14.689295 2014] [:error] [pid 18000:tid 140535993972480] [client 65.207.23.201:36709] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 21 00:58:09.812025 2014] [:error] [pid 18001:tid 140535943616256] [client 54.90.104.109:38112] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 21 05:39:17.124431 2014] [:error] [pid 18001:tid 140535926830848] [client 121.226.123.184:34907] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://hotel.qunar.com/
+[Thu Aug 21 09:46:57.220004 2014] [:error] [pid 18000:tid 140535918438144] [client 222.186.10.14:1697] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 21 12:09:25.910287 2014] [:error] [pid 18001:tid 140535876474624] [client 117.21.226.160:3340] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 22 17:42:21.089641 2014] [:error] [pid 18000:tid 140535985579776] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 23 00:22:50.646228 2014] [:error] [pid 18001:tid 140535884867328] [client 93.115.92.169:51895] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 23 00:50:11.115767 2014] [:error] [pid 18005:tid 140535926830848] [client 108.61.242.247:51299] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 23 00:50:11.276217 2014] [:error] [pid 18000:tid 140535918438144] [client 108.61.242.247:51317] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 23 07:41:37.176937 2014] [:error] [pid 18001:tid 140536110372608] [client 54.91.178.118:41231] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 05:51:32.726136 2014] [:error] [pid 18005:tid 140535952008960] [client 66.249.64.152:58370] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 06:49:49.541998 2014] [:error] [pid 9559:tid 140536002365184] [client 95.111.68.120:55659] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 06:49:49.950556 2014] [:error] [pid 9558:tid 140536010757888] [client 95.111.68.120:55815] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 06:49:50.351153 2014] [:error] [pid 9559:tid 140536135550720] [client 95.111.68.120:55963] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 06:49:50.775611 2014] [:error] [pid 9558:tid 140536118765312] [client 95.111.68.120:56109] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 06:49:51.152552 2014] [:error] [pid 9559:tid 140536143943424] [client 95.111.68.120:56266] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 06:49:51.547870 2014] [:error] [pid 9558:tid 140536002365184] [client 95.111.68.120:56384] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 07:16:33.846186 2014] [:error] [pid 9559:tid 140536118765312] [client 115.29.140.19:50789] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 11:16:56.024328 2014] [cgid:error] [pid 9558:tid 140535968794368] [client 46.19.232.136:49630] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Sun Aug 24 11:16:56.402358 2014] [cgid:error] [pid 9559:tid 140535985579776] [client 46.19.232.136:49715] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Sun Aug 24 11:16:56.784675 2014] [cgid:error] [pid 9558:tid 140535960401664] [client 46.19.232.136:49793] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Sun Aug 24 11:16:57.167608 2014] [cgid:error] [pid 9559:tid 140536127158016] [client 46.19.232.136:49895] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Sun Aug 24 11:16:57.553527 2014] [cgid:error] [pid 9558:tid 140535952008960] [client 46.19.232.136:49982] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Sun Aug 24 11:16:57.930287 2014] [cgid:error] [pid 9559:tid 140535918438144] [client 46.19.232.136:50068] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5-cgi
+[Sun Aug 24 11:16:58.308973 2014] [cgid:error] [pid 9558:tid 140536135550720] [client 46.19.232.136:50149] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4-cgi
+[Sun Aug 24 11:16:58.691551 2014] [cgid:error] [pid 9559:tid 140535926830848] [client 46.19.232.136:50232] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5.cgi
+[Sun Aug 24 11:16:59.058413 2014] [cgid:error] [pid 9558:tid 140535943616256] [client 46.19.232.136:50311] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4.cgi
+[Sun Aug 24 11:16:59.420519 2014] [cgid:error] [pid 9559:tid 140535910045440] [client 46.19.232.136:50394] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php52.cgi
+[Sun Aug 24 11:16:59.799435 2014] [cgid:error] [pid 9558:tid 140535935223552] [client 46.19.232.136:50471] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php53.cgi
+[Sun Aug 24 11:17:00.191637 2014] [cgid:error] [pid 9559:tid 140535901652736] [client 46.19.232.136:50556] AH01265: attempt to invoke directory as script: /usr/lib/cgi-bin/
+[Sun Aug 24 11:17:00.575324 2014] [:error] [pid 9558:tid 140535926830848] [client 46.19.232.136:50629] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 11:17:00.945312 2014] [:error] [pid 9559:tid 140535935223552] [client 46.19.232.136:50704] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 11:17:01.320088 2014] [cgid:error] [pid 9558:tid 140535918438144] [client 46.19.232.136:50773] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5.cgi-20120725_by_SAKUR
+[Sun Aug 24 11:17:01.700721 2014] [cgid:error] [pid 9559:tid 140535893260032] [client 46.19.232.136:50863] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/info.php
+[Sun Aug 24 11:17:02.065728 2014] [cgid:error] [pid 9558:tid 140535893260032] [client 46.19.232.136:50961] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.fcgi
+[Sun Aug 24 11:17:02.438883 2014] [:error] [pid 9559:tid 140535884867328] [client 46.19.232.136:51039] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 11:17:02.813665 2014] [:error] [pid 9558:tid 140535868081920] [client 46.19.232.136:51114] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 11:17:03.200840 2014] [cgid:error] [pid 9559:tid 140535943616256] [client 46.19.232.136:51196] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/phpinfo.php
+[Sun Aug 24 11:17:03.585431 2014] [:error] [pid 9558:tid 140535901652736] [client 46.19.232.136:51297] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 11:17:03.948757 2014] [:error] [pid 9559:tid 140535876474624] [client 46.19.232.136:51381] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 24 16:02:45.055845 2014] [:error] [pid 9558:tid 140536110372608] [client 54.82.244.128:52815] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 25 07:04:15.081455 2014] [:error] [pid 9559:tid 140536127158016] [client 198.20.69.74:34693] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 25 17:57:53.475692 2014] [:error] [pid 9559:tid 140536110372608] [client 66.249.79.64:37506] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 25 21:35:00.714406 2014] [:error] [pid 9558:tid 140536118765312] [client 50.30.32.186:60149] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Aug 25 23:49:51.693954 2014] [:error] [pid 9558:tid 140536127158016] [client 66.249.79.77:65381] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 04:23:09.653761 2014] [:error] [pid 9559:tid 140535910045440] [client 81.17.16.170:60325] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 04:23:10.057305 2014] [:error] [pid 9558:tid 140535935223552] [client 81.17.16.170:60401] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 05:41:06.694976 2014] [:error] [pid 9559:tid 140535893260032] [client 54.83.119.7:47410] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 06:25:15.256736 2014] [cgid:error] [pid 9559:tid 140535952008960] [client 82.114.95.85:43674] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Tue Aug 26 06:25:15.650036 2014] [cgid:error] [pid 9558:tid 140535910045440] [client 82.114.95.85:43721] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Tue Aug 26 06:25:16.042889 2014] [cgid:error] [pid 9559:tid 140535960401664] [client 82.114.95.85:43782] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Tue Aug 26 06:25:16.433579 2014] [cgid:error] [pid 9558:tid 140536143943424] [client 82.114.95.85:43836] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Tue Aug 26 06:25:17.066749 2014] [cgid:error] [pid 9559:tid 140535968794368] [client 82.114.95.85:43917] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Tue Aug 26 06:25:17.459663 2014] [cgid:error] [pid 9558:tid 140536027543296] [client 82.114.95.85:43968] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5-cgi
+[Tue Aug 26 06:25:17.853507 2014] [cgid:error] [pid 9559:tid 140536110372608] [client 82.114.95.85:44020] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4-cgi
+[Tue Aug 26 06:25:18.244762 2014] [cgid:error] [pid 9558:tid 140536110372608] [client 82.114.95.85:44069] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5.cgi
+[Tue Aug 26 06:25:18.637363 2014] [cgid:error] [pid 9559:tid 140536010757888] [client 82.114.95.85:44108] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4.cgi
+[Tue Aug 26 06:25:19.030956 2014] [cgid:error] [pid 9558:tid 140536019150592] [client 82.114.95.85:44154] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php52.cgi
+[Tue Aug 26 06:25:19.425941 2014] [cgid:error] [pid 9559:tid 140536002365184] [client 82.114.95.85:44198] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php53.cgi
+[Tue Aug 26 06:25:19.817367 2014] [cgid:error] [pid 9558:tid 140536010757888] [client 82.114.95.85:44238] AH01265: attempt to invoke directory as script: /usr/lib/cgi-bin/
+[Tue Aug 26 06:25:20.209422 2014] [:error] [pid 9559:tid 140536143943424] [client 82.114.95.85:44274] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 06:25:20.600827 2014] [:error] [pid 9558:tid 140536002365184] [client 82.114.95.85:44317] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 06:25:20.993555 2014] [cgid:error] [pid 9559:tid 140536135550720] [client 82.114.95.85:44352] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5.cgi-20120725_by_SAKUR
+[Tue Aug 26 06:25:21.385115 2014] [cgid:error] [pid 9558:tid 140536118765312] [client 82.114.95.85:44399] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/info.php
+[Tue Aug 26 06:25:21.775326 2014] [cgid:error] [pid 9559:tid 140536118765312] [client 82.114.95.85:44450] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.fcgi
+[Tue Aug 26 06:25:22.166882 2014] [:error] [pid 9558:tid 140535993972480] [client 82.114.95.85:44496] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 06:25:22.560545 2014] [:error] [pid 9559:tid 140536019150592] [client 82.114.95.85:44537] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 06:25:22.955731 2014] [cgid:error] [pid 9558:tid 140535985579776] [client 82.114.95.85:44580] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/phpinfo.php
+[Tue Aug 26 06:25:23.349593 2014] [:error] [pid 9559:tid 140535977187072] [client 82.114.95.85:44636] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 06:25:23.741535 2014] [:error] [pid 9558:tid 140536127158016] [client 82.114.95.85:44675] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 14:24:48.320212 2014] [cgid:error] [pid 9559:tid 140535893260032] [client 213.5.67.223:49997] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Tue Aug 26 14:24:48.471057 2014] [cgid:error] [pid 9559:tid 140535893260032] [client 213.5.67.223:49997] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Tue Aug 26 14:24:48.634476 2014] [cgid:error] [pid 9559:tid 140535893260032] [client 213.5.67.223:49997] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Tue Aug 26 14:24:48.791884 2014] [cgid:error] [pid 9559:tid 140535893260032] [client 213.5.67.223:49997] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Tue Aug 26 14:24:48.947691 2014] [cgid:error] [pid 9559:tid 140535893260032] [client 213.5.67.223:49997] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Tue Aug 26 23:05:38.899946 2014] [:error] [pid 9559:tid 140536010757888] [client 66.240.192.138:50284] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 23:05:38.937552 2014] [:error] [pid 9558:tid 140536019150592] [client 66.240.192.138:50380] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Aug 26 23:59:00.489823 2014] [:error] [pid 9559:tid 140536002365184] [client 54.205.192.42:54097] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Aug 27 08:07:32.791488 2014] [:error] [pid 9558:tid 140535952008960] [client 115.239.248.56:4180] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 28 11:59:09.214700 2014] [:error] [pid 9558:tid 140535960401664] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 28 12:04:27.022352 2014] [cgid:error] [pid 9559:tid 140535926830848] [client 187.33.2.88:51049] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Thu Aug 28 13:01:13.206292 2014] [:error] [pid 9558:tid 140536135550720] [client 111.206.199.163:50684] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 28 17:31:16.086239 2014] [:error] [pid 9558:tid 140535926830848] [client 65.207.23.201:43491] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 28 19:01:49.510845 2014] [:error] [pid 9559:tid 140535868081920] [client 82.27.240.222:57222] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Aug 28 23:03:45.160431 2014] [:error] [pid 9558:tid 140536143943424] [client 110.45.241.238:55116] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 29 07:34:10.793978 2014] [:error] [pid 9559:tid 140535993972480] [client 76.164.225.90:64733] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 29 11:03:09.465476 2014] [:error] [pid 9558:tid 140535952008960] [client 182.254.141.88:34276] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 29 14:47:46.324617 2014] [:error] [pid 9559:tid 140535876474624] [client 54.91.56.55:47075] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 29 18:46:08.534179 2014] [:error] [pid 9559:tid 140536010757888] [client 185.25.150.40:33117] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 29 19:05:16.863215 2014] [:error] [pid 9558:tid 140536027543296] [client 185.25.150.40:55158] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 29 22:08:06.928014 2014] [:error] [pid 9558:tid 140536010757888] [client 182.254.208.113:58465] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Aug 29 22:44:41.399872 2014] [:error] [pid 9559:tid 140536019150592] [client 182.254.209.73:47713] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 05:11:13.063690 2014] [:error] [pid 9558:tid 140536127158016] [client 82.221.105.7:56038] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 05:11:13.443196 2014] [:error] [pid 9559:tid 140536127158016] [client 82.221.105.7:56073] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:26:58.506889 2014] [:error] [pid 9558:tid 140535960401664] [client 117.21.191.206:2798] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:44.902553 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:44.956434 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.012903 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.071971 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.125888 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.179689 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.233139 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.287268 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.340739 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.394253 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.447737 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.501544 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.555017 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.608565 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.661819 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.715869 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.769594 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.823045 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.877118 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.930602 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:45.984148 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.039513 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.093168 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.147274 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.200955 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.254488 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.308554 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.362414 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.420004 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.473930 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.528645 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.582182 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.635810 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.690392 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.743985 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.798020 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.851585 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.905575 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:46.959101 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.012577 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.066383 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.120791 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.173875 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.227656 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.281482 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.334894 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.388445 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.442235 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.495980 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.549508 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.603275 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.656934 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.710668 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.764736 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.818429 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.872274 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.925951 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:47.979414 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.043871 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.098707 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.162400 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.216023 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.281433 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.335241 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.397487 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.451258 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.512565 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.567059 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 07:59:48.630969 2014] [:error] [pid 9559:tid 140535926830848] [client 216.250.166.76:60915] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 10:33:59.217051 2014] [:error] [pid 9558:tid 140535868081920] [client 130.185.139.213:46705] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 14:38:24.892500 2014] [:error] [pid 9558:tid 140536143943424] [client 182.254.209.73:51952] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 15:43:09.369806 2014] [:error] [pid 9559:tid 140536110372608] [client 66.249.76.116:54112] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:11.686460 2014] [:error] [pid 9559:tid 140536118765312] [client 218.152.216.82:56719] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:11.983753 2014] [:error] [pid 9558:tid 140536118765312] [client 218.152.216.82:57334] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:12.281048 2014] [:error] [pid 9559:tid 140536019150592] [client 218.152.216.82:57907] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:12.563868 2014] [:error] [pid 9558:tid 140535993972480] [client 218.152.216.82:58530] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:12.855555 2014] [:error] [pid 9559:tid 140536027543296] [client 218.152.216.82:59083] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:13.137432 2014] [:error] [pid 9558:tid 140535985579776] [client 218.152.216.82:59642] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:13.422764 2014] [:error] [pid 9559:tid 140535993972480] [client 218.152.216.82:60162] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:13.706873 2014] [:error] [pid 9558:tid 140535977187072] [client 218.152.216.82:60710] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:14.001511 2014] [:error] [pid 9559:tid 140535985579776] [client 218.152.216.82:32925] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:14.308230 2014] [:error] [pid 9558:tid 140536127158016] [client 218.152.216.82:33363] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:14.584063 2014] [:error] [pid 9559:tid 140536127158016] [client 218.152.216.82:33824] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:14.858546 2014] [:error] [pid 9558:tid 140535968794368] [client 218.152.216.82:34200] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:15.135409 2014] [:error] [pid 9559:tid 140535918438144] [client 218.152.216.82:34567] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:15.417508 2014] [:error] [pid 9558:tid 140535960401664] [client 218.152.216.82:34897] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:15.773135 2014] [:error] [pid 9559:tid 140535926830848] [client 218.152.216.82:35346] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:16.165536 2014] [:error] [pid 9558:tid 140535952008960] [client 218.152.216.82:35871] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 21:20:16.459758 2014] [:error] [pid 9559:tid 140535901652736] [client 218.152.216.82:36286] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Aug 30 23:37:44.447024 2014] [:error] [pid 9559:tid 140535893260032] [client 182.254.208.209:35098] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 31 05:35:48.959316 2014] [:error] [pid 9559:tid 140535868081920] [client 182.254.136.121:42382] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 31 06:27:01.048445 2014] [:error] [pid 9558:tid 140535876474624] [client 222.186.10.14:2568] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 31 13:42:01.830660 2014] [:error] [pid 32421:tid 140536002365184] [client 66.240.192.138:44000] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 31 13:42:01.883737 2014] [:error] [pid 32422:tid 140535985579776] [client 66.240.192.138:44022] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Aug 31 18:21:52.059376 2014] [:error] [pid 32422:tid 140535935223552] [client 209.126.230.71:44524] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 02:25:05.485151 2014] [:error] [pid 32421:tid 140536027543296] [client 14.139.155.134:21806] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 02:25:39.271787 2014] [:error] [pid 32422:tid 140536010757888] [client 14.139.155.134:40484] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 02:25:46.025642 2014] [:error] [pid 32421:tid 140536110372608] [client 14.139.155.134:16139] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 02:25:47.746802 2014] [:error] [pid 32422:tid 140536002365184] [client 14.139.155.134:57063] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 05:07:46.688394 2014] [:error] [pid 32422:tid 140535977187072] [client 162.248.160.220:45166] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 05:07:47.845566 2014] [:error] [pid 32421:tid 140535968794368] [client 162.248.160.220:45307] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 05:07:47.999078 2014] [:error] [pid 32422:tid 140535993972480] [client 162.248.160.220:46090] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 05:07:48.154846 2014] [:error] [pid 32421:tid 140535960401664] [client 162.248.160.220:46195] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 06:57:23.198131 2014] [:error] [pid 32421:tid 140535952008960] [client 74.63.199.120:52077] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 07:19:18.143415 2014] [:error] [pid 32422:tid 140536110372608] [client 216.75.8.50:54885] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 07:36:59.949654 2014] [:error] [pid 32422:tid 140535952008960] [client 175.102.9.100:3607] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 13:21:51.601404 2014] [:error] [pid 32422:tid 140535985579776] [client 184.75.214.234:56761] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 13:21:51.648339 2014] [:error] [pid 32421:tid 140536010757888] [client 184.75.214.234:56759] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 13:21:52.258402 2014] [:error] [pid 32422:tid 140536135550720] [client 184.75.214.234:56760] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 14:05:43.419432 2014] [:error] [pid 32421:tid 140536002365184] [client 23.92.223.14:32933] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 14:05:43.620661 2014] [:error] [pid 32422:tid 140536118765312] [client 23.92.223.14:32952] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 14:22:01.056875 2014] [:error] [pid 32421:tid 140536127158016] [client 182.254.208.101:32864] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 01 18:51:14.580822 2014] [:error] [pid 32422:tid 140535943616256] [client 54.77.152.26:38625] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 01:48:01.242748 2014] [:error] [pid 32422:tid 140535893260032] [client 54.91.252.88:38209] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 06:01:17.030540 2014] [:error] [pid 32421:tid 140535876474624] [client 182.254.132.201:42781] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 06:32:53.612194 2014] [:error] [pid 32421:tid 140536110372608] [client 203.191.150.182:3740] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 06:43:41.643058 2014] [:error] [pid 32422:tid 140535968794368] [client 182.254.141.88:33029] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 10:47:05.720091 2014] [:error] [pid 32422:tid 140535993972480] [client 61.160.137.207:52565] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 16:20:08.843784 2014] [:error] [pid 32421:tid 140536135550720] [client 66.249.70.210:38396] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 17:48:32.224695 2014] [:error] [pid 32422:tid 140535935223552] [client 192.99.152.38:59220] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 17:50:56.184000 2014] [:error] [pid 32421:tid 140535935223552] [client 54.82.96.225:41425] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 18:10:05.244640 2014] [authz_core:error] [pid 32422:tid 140535926830848] [client 31.170.178.234:38743] AH01630: client denied by server configuration: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 20:03:20.530268 2014] [:error] [pid 32422:tid 140535876474624] [client 74.63.199.120:59234] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 02 23:25:48.872317 2014] [:error] [pid 32422:tid 140535893260032] [client 182.254.153.184:50790] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 03 03:07:27.789409 2014] [:error] [pid 32421:tid 140535910045440] [client 116.114.83.15:4531] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://65.74.153.170/docs/funcspecs/3.jsp
+[Wed Sep 03 04:35:52.351512 2014] [:error] [pid 32422:tid 140535960401664] [client 95.132.67.73:4540] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 03 05:42:41.970647 2014] [:error] [pid 32422:tid 140535968794368] [client 222.212.187.84:43990] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://hotel.qunar.com/
+[Wed Sep 03 06:12:24.182346 2014] [:error] [pid 32421:tid 140536019150592] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 03 21:10:25.593791 2014] [:error] [pid 32421:tid 140536027543296] [client 74.63.199.120:35490] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 03 21:35:43.063947 2014] [:error] [pid 32422:tid 140535960401664] [client 182.254.209.73:43328] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 04 11:04:17.012011 2014] [:error] [pid 32422:tid 140535876474624] [client 218.248.232.24:50238] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 04 11:04:20.563943 2014] [:error] [pid 32421:tid 140535893260032] [client 218.248.232.24:33525] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 04 22:02:52.401864 2014] [cgid:error] [pid 32422:tid 140536110372608] [client 75.98.84.57:56634] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Thu Sep 04 22:02:52.418164 2014] [cgid:error] [pid 32421:tid 140535943616256] [client 75.98.84.57:56635] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Thu Sep 04 22:02:52.425711 2014] [cgid:error] [pid 32422:tid 140535952008960] [client 75.98.84.57:56636] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Thu Sep 04 22:02:52.434875 2014] [cgid:error] [pid 32421:tid 140535935223552] [client 75.98.84.57:56637] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Thu Sep 04 22:02:52.442470 2014] [cgid:error] [pid 32422:tid 140535943616256] [client 75.98.84.57:56638] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Fri Sep 05 06:45:31.766080 2014] [:error] [pid 32422:tid 140536010757888] [client 107.22.2.97:44068] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 07:39:28.655633 2014] [:error] [pid 32421:tid 140536027543296] [client 71.6.167.142:38338] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 07:39:28.702456 2014] [:error] [pid 32422:tid 140535910045440] [client 71.6.167.142:38438] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 08:53:21.171859 2014] [:error] [pid 32421:tid 140536019150592] [client 192.99.166.102:35129] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 08:53:21.173481 2014] [:error] [pid 32422:tid 140535960401664] [client 192.99.166.102:35130] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 08:53:21.175188 2014] [:error] [pid 32421:tid 140536118765312] [client 192.99.166.102:35131] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 17:50:52.723375 2014] [:error] [pid 32422:tid 140536019150592] [client 117.21.173.155:1232] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 18:15:39.707623 2014] [:error] [pid 32421:tid 140536135550720] [client 183.87.82.242:36439] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 18:15:55.323600 2014] [:error] [pid 32422:tid 140536127158016] [client 183.87.82.242:44814] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 18:15:58.131545 2014] [:error] [pid 32421:tid 140535952008960] [client 183.87.82.242:46259] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 18:16:07.756819 2014] [:error] [pid 32422:tid 140535943616256] [client 183.87.82.242:46718] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 05 18:16:08.351035 2014] [:error] [pid 32421:tid 140535935223552] [client 183.87.82.242:48247] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 00:47:44.428800 2014] [:error] [pid 32422:tid 140535868081920] [client 117.21.173.140:4840] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 01:06:56.291601 2014] [:error] [pid 32421:tid 140535884867328] [client 62.210.167.201:43013] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 03:55:30.003257 2014] [:error] [pid 32421:tid 140535910045440] [client 192.99.166.42:33975] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 03:55:30.003710 2014] [:error] [pid 32422:tid 140536010757888] [client 192.99.166.42:33978] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 03:55:30.003953 2014] [:error] [pid 32421:tid 140535876474624] [client 192.99.166.42:33977] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 03:55:30.004489 2014] [:error] [pid 32422:tid 140535901652736] [client 192.99.166.42:33979] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 05:49:37.213208 2014] [:error] [pid 32421:tid 140536110372608] [client 192.99.152.38:53776] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 06:07:46.367962 2014] [:error] [pid 32422:tid 140536002365184] [client 74.63.199.120:33487] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:19.368175 2014] [:error] [pid 32422:tid 140535993972480] [client 94.102.63.27:59421] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:19.702048 2014] [cgid:error] [pid 32421:tid 140535960401664] [client 94.102.63.27:60212] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Sat Sep 06 15:11:20.006349 2014] [cgid:error] [pid 32422:tid 140536019150592] [client 94.102.63.27:60972] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Sat Sep 06 15:11:20.309914 2014] [cgid:error] [pid 32421:tid 140536135550720] [client 94.102.63.27:33461] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Sat Sep 06 15:11:20.613431 2014] [cgid:error] [pid 32422:tid 140536127158016] [client 94.102.63.27:34172] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Sat Sep 06 15:11:20.918108 2014] [cgid:error] [pid 32421:tid 140535952008960] [client 94.102.63.27:34881] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Sat Sep 06 15:11:21.223420 2014] [:error] [pid 32422:tid 140535943616256] [client 94.102.63.27:35590] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:21.527803 2014] [:error] [pid 32421:tid 140535935223552] [client 94.102.63.27:36303] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:21.829919 2014] [:error] [pid 32422:tid 140536110372608] [client 94.102.63.27:37003] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:22.133578 2014] [:error] [pid 32421:tid 140535943616256] [client 94.102.63.27:37698] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:22.434819 2014] [:error] [pid 32422:tid 140535952008960] [client 94.102.63.27:38426] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:22.739633 2014] [:error] [pid 32421:tid 140535926830848] [client 94.102.63.27:39140] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:23.045190 2014] [:error] [pid 32422:tid 140535935223552] [client 94.102.63.27:39848] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:23.346345 2014] [:error] [pid 32421:tid 140535918438144] [client 94.102.63.27:40556] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:23.649203 2014] [:error] [pid 32422:tid 140535926830848] [client 94.102.63.27:41284] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:23.951975 2014] [:error] [pid 32421:tid 140535893260032] [client 94.102.63.27:41995] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:24.255769 2014] [:error] [pid 32422:tid 140535918438144] [client 94.102.63.27:42706] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:24.664591 2014] [:error] [pid 32421:tid 140535901652736] [client 94.102.63.27:43672] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:24.973084 2014] [:error] [pid 32422:tid 140535876474624] [client 94.102.63.27:44376] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:25.281633 2014] [:error] [pid 32421:tid 140535868081920] [client 94.102.63.27:45097] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:25.586032 2014] [:error] [pid 32422:tid 140535868081920] [client 94.102.63.27:45814] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:25.903601 2014] [:error] [pid 32421:tid 140535884867328] [client 94.102.63.27:46553] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:26.209327 2014] [:error] [pid 32422:tid 140535893260032] [client 94.102.63.27:47264] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:26.513618 2014] [:error] [pid 32421:tid 140536143943424] [client 94.102.63.27:47991] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:26.817549 2014] [:error] [pid 32422:tid 140535884867328] [client 94.102.63.27:48694] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:27.135044 2014] [:error] [pid 32421:tid 140535910045440] [client 94.102.63.27:49406] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:27.437996 2014] [:error] [pid 32422:tid 140536010757888] [client 94.102.63.27:50115] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:27.740915 2014] [:error] [pid 32421:tid 140535876474624] [client 94.102.63.27:50781] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:28.048667 2014] [:error] [pid 32422:tid 140535901652736] [client 94.102.63.27:51489] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:28.350577 2014] [:error] [pid 32421:tid 140536027543296] [client 94.102.63.27:52177] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:28.687356 2014] [:error] [pid 32422:tid 140535910045440] [client 94.102.63.27:52950] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:28.989120 2014] [:error] [pid 32421:tid 140536110372608] [client 94.102.63.27:53627] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:29.291862 2014] [:error] [pid 32422:tid 140536002365184] [client 94.102.63.27:54295] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:29.594425 2014] [:error] [pid 32421:tid 140536019150592] [client 94.102.63.27:54993] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:29.923675 2014] [:error] [pid 32422:tid 140535960401664] [client 94.102.63.27:55764] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:30.227108 2014] [:error] [pid 32421:tid 140536118765312] [client 94.102.63.27:56439] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:30.530202 2014] [:error] [pid 32422:tid 140535968794368] [client 94.102.63.27:57149] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:30.833085 2014] [:error] [pid 32421:tid 140536010757888] [client 94.102.63.27:57842] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:31.137858 2014] [:error] [pid 32422:tid 140535985579776] [client 94.102.63.27:58521] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:31.440717 2014] [:error] [pid 32421:tid 140536002365184] [client 94.102.63.27:59249] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:31.767809 2014] [:error] [pid 32422:tid 140536027543296] [client 94.102.63.27:60000] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:32.076133 2014] [:error] [pid 32421:tid 140536127158016] [client 94.102.63.27:60727] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:32.407198 2014] [:error] [pid 32422:tid 140536135550720] [client 94.102.63.27:33253] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:32.716012 2014] [:error] [pid 32421:tid 140535993972480] [client 94.102.63.27:33961] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:33.039867 2014] [:error] [pid 32422:tid 140536143943424] [client 94.102.63.27:34713] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:33.368534 2014] [:error] [pid 32421:tid 140535977187072] [client 94.102.63.27:35466] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:33.673563 2014] [:error] [pid 32422:tid 140536118765312] [client 94.102.63.27:36194] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:33.978130 2014] [:error] [pid 32421:tid 140535985579776] [client 94.102.63.27:36906] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:34.288528 2014] [:error] [pid 32422:tid 140535977187072] [client 94.102.63.27:37645] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:34.592122 2014] [:error] [pid 32421:tid 140535968794368] [client 94.102.63.27:38386] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:34.895720 2014] [:error] [pid 32422:tid 140535993972480] [client 94.102.63.27:39114] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:35.200510 2014] [:error] [pid 32421:tid 140535960401664] [client 94.102.63.27:39861] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:35.530193 2014] [:error] [pid 32422:tid 140536019150592] [client 94.102.63.27:40698] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:35.834967 2014] [:error] [pid 32421:tid 140536135550720] [client 94.102.63.27:41456] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:36.140676 2014] [:error] [pid 32422:tid 140536127158016] [client 94.102.63.27:42217] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:36.445978 2014] [:error] [pid 32421:tid 140535952008960] [client 94.102.63.27:42983] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:36.752640 2014] [:error] [pid 32422:tid 140535943616256] [client 94.102.63.27:43723] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:37.058120 2014] [:error] [pid 32421:tid 140535935223552] [client 94.102.63.27:44456] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:37.809447 2014] [:error] [pid 32422:tid 140536110372608] [client 94.102.63.27:45195] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:38.112534 2014] [:error] [pid 32421:tid 140535943616256] [client 94.102.63.27:47134] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:38.417503 2014] [:error] [pid 32422:tid 140535952008960] [client 94.102.63.27:47980] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:38.722298 2014] [:error] [pid 32421:tid 140535926830848] [client 94.102.63.27:48781] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:39.030129 2014] [:error] [pid 32422:tid 140535935223552] [client 94.102.63.27:49620] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:39.334779 2014] [:error] [pid 32421:tid 140535918438144] [client 94.102.63.27:50423] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:39.636938 2014] [:error] [pid 32422:tid 140535926830848] [client 94.102.63.27:51231] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:39.940039 2014] [:error] [pid 32421:tid 140535893260032] [client 94.102.63.27:52044] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:40.285800 2014] [:error] [pid 32422:tid 140535918438144] [client 94.102.63.27:52991] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:40.589487 2014] [:error] [pid 32421:tid 140535901652736] [client 94.102.63.27:53836] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:40.906468 2014] [:error] [pid 32422:tid 140535876474624] [client 94.102.63.27:54718] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:41.211215 2014] [:error] [pid 32421:tid 140535868081920] [client 94.102.63.27:55565] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:41.513854 2014] [:error] [pid 32422:tid 140535868081920] [client 94.102.63.27:56420] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:41.817583 2014] [:error] [pid 32421:tid 140535884867328] [client 94.102.63.27:57244] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:42.123280 2014] [:error] [pid 32422:tid 140535893260032] [client 94.102.63.27:58061] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:42.432557 2014] [:error] [pid 32421:tid 140536143943424] [client 94.102.63.27:58921] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:42.735381 2014] [:error] [pid 32422:tid 140535884867328] [client 94.102.63.27:59734] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:43.039722 2014] [:error] [pid 32421:tid 140535910045440] [client 94.102.63.27:60527] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:43.345821 2014] [:error] [pid 32422:tid 140536010757888] [client 94.102.63.27:33134] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:43.651589 2014] [:error] [pid 32421:tid 140535876474624] [client 94.102.63.27:33990] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:43.959331 2014] [:error] [pid 32422:tid 140535901652736] [client 94.102.63.27:34825] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:44.267968 2014] [:error] [pid 32421:tid 140536027543296] [client 94.102.63.27:35642] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:44.570826 2014] [:error] [pid 32422:tid 140535910045440] [client 94.102.63.27:36431] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:44.874070 2014] [:error] [pid 32421:tid 140536110372608] [client 94.102.63.27:37207] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:45.180094 2014] [:error] [pid 32422:tid 140536002365184] [client 94.102.63.27:38007] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:45.485532 2014] [:error] [pid 32421:tid 140536019150592] [client 94.102.63.27:38821] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:45.794334 2014] [:error] [pid 32422:tid 140535960401664] [client 94.102.63.27:39611] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:46.096425 2014] [:error] [pid 32421:tid 140536118765312] [client 94.102.63.27:40359] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:46.398960 2014] [:error] [pid 32422:tid 140535968794368] [client 94.102.63.27:41138] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:46.702646 2014] [:error] [pid 32421:tid 140536010757888] [client 94.102.63.27:41903] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 15:11:47.006811 2014] [:error] [pid 32422:tid 140535985579776] [client 94.102.63.27:42669] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 21:38:49.884859 2014] [:error] [pid 32422:tid 140535977187072] [client 117.21.191.205:1338] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 22:13:30.105806 2014] [:error] [pid 32421:tid 140535968794368] [client 192.99.166.102:37251] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 22:27:55.762946 2014] [:error] [pid 32421:tid 140535960401664] [client 198.20.69.98:58375] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 06 22:27:55.808747 2014] [:error] [pid 32422:tid 140536019150592] [client 198.20.69.98:58378] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 07 02:20:00.874736 2014] [:error] [pid 32422:tid 140535935223552] [client 66.240.236.119:47640] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 07 02:20:01.114774 2014] [:error] [pid 32421:tid 140535918438144] [client 66.240.236.119:47647] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 07 03:47:39.031317 2014] [:error] [pid 32422:tid 140535918438144] [client 54.205.251.140:34545] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 07 11:57:05.709322 2014] [:error] [pid 30606:tid 140536118765312] [client 66.249.64.122:45839] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 07 13:21:33.890428 2014] [:error] [pid 30599:tid 140536002365184] [client 192.99.152.38:44361] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 07 16:12:54.636093 2014] [:error] [pid 30600:tid 140536019150592] [client 74.63.199.120:47447] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 00:14:51.362529 2014] [:error] [pid 30599:tid 140535952008960] [client 54.84.192.68:59930] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 00:40:13.036372 2014] [:error] [pid 30600:tid 140535926830848] [client 157.55.39.37:23913] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 00:40:23.497873 2014] [:error] [pid 30600:tid 140535918438144] [client 157.55.39.37:31352] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 00:40:23.525482 2014] [:error] [pid 30600:tid 140535918438144] [client 157.55.39.37:31352] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 00:40:23.551661 2014] [:error] [pid 30600:tid 140535918438144] [client 157.55.39.37:31352] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 04:07:30.780609 2014] [:error] [pid 30606:tid 140535884867328] [client 182.254.136.121:45488] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 05:51:40.208820 2014] [:error] [pid 30599:tid 140535884867328] [client 117.21.225.168:2908] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 13:47:21.123671 2014] [:error] [pid 30606:tid 140536110372608] [client 54.166.183.3:39877] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:23.997517 2014] [:error] [pid 30606:tid 140536127158016] [client 193.145.46.55:36387] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:24.380036 2014] [:error] [pid 30599:tid 140536002365184] [client 193.145.46.55:36903] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:24.772112 2014] [:error] [pid 30600:tid 140535960401664] [client 193.145.46.55:37473] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:25.158132 2014] [:error] [pid 30606:tid 140536135550720] [client 193.145.46.55:37989] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:25.532917 2014] [:error] [pid 30599:tid 140535993972480] [client 193.145.46.55:38521] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:25.902160 2014] [:error] [pid 30600:tid 140536019150592] [client 193.145.46.55:39046] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:26.282411 2014] [:error] [pid 30606:tid 140536143943424] [client 193.145.46.55:39557] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:26.656884 2014] [:error] [pid 30599:tid 140535985579776] [client 193.145.46.55:40130] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:27.027325 2014] [:error] [pid 30600:tid 140536010757888] [client 193.145.46.55:40725] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:27.406409 2014] [:error] [pid 30606:tid 140535935223552] [client 193.145.46.55:41429] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:27.784683 2014] [:error] [pid 30599:tid 140535977187072] [client 193.145.46.55:42148] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:28.163315 2014] [:error] [pid 30600:tid 140535977187072] [client 193.145.46.55:42800] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:28.560065 2014] [:error] [pid 30606:tid 140535943616256] [client 193.145.46.55:43461] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:28.943760 2014] [:error] [pid 30599:tid 140535968794368] [client 193.145.46.55:44124] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:29.322630 2014] [:error] [pid 30600:tid 140536110372608] [client 193.145.46.55:44727] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:29.702420 2014] [:error] [pid 30606:tid 140535952008960] [client 193.145.46.55:45323] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 08 16:14:30.075042 2014] [:error] [pid 30599:tid 140535960401664] [client 193.145.46.55:45941] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 00:45:18.486066 2014] [:error] [pid 30599:tid 140535910045440] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 05:06:31.107890 2014] [:error] [pid 30606:tid 140535893260032] [client 107.20.83.187:45083] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:05.140057 2014] [:error] [pid 30600:tid 140535985579776] [client 124.202.141.70:56721] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:05.834042 2014] [:error] [pid 30606:tid 140535993972480] [client 124.202.141.70:57086] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:06.511333 2014] [:error] [pid 30599:tid 140536019150592] [client 124.202.141.70:57432] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:07.205221 2014] [:error] [pid 30600:tid 140535952008960] [client 124.202.141.70:57786] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:07.896575 2014] [:error] [pid 30606:tid 140536118765312] [client 124.202.141.70:58148] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:08.543955 2014] [:error] [pid 30599:tid 140536010757888] [client 124.202.141.70:58501] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:09.232277 2014] [:error] [pid 30600:tid 140535943616256] [client 124.202.141.70:58841] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:09.960154 2014] [:error] [pid 30606:tid 140536127158016] [client 124.202.141.70:59200] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:10.715853 2014] [:error] [pid 30599:tid 140536002365184] [client 124.202.141.70:59557] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:12.554117 2014] [:error] [pid 30600:tid 140535960401664] [client 124.202.141.70:59923] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:13.268279 2014] [:error] [pid 30606:tid 140536135550720] [client 124.202.141.70:60853] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:13.991347 2014] [:error] [pid 30599:tid 140535993972480] [client 124.202.141.70:32988] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:14.691282 2014] [:error] [pid 30600:tid 140536019150592] [client 124.202.141.70:33381] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:15.451962 2014] [:error] [pid 30606:tid 140536143943424] [client 124.202.141.70:33768] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:16.160892 2014] [:error] [pid 30599:tid 140535985579776] [client 124.202.141.70:34178] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:16.841198 2014] [:error] [pid 30600:tid 140536010757888] [client 124.202.141.70:34558] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 15:28:17.560140 2014] [:error] [pid 30606:tid 140535935223552] [client 124.202.141.70:34917] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 09 19:04:41.499828 2014] [:error] [pid 30599:tid 140535968794368] [client 192.99.152.38:37655] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 00:30:07.123702 2014] [:error] [pid 30600:tid 140535926830848] [client 50.17.79.66:35971] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 01:30:25.490303 2014] [:error] [pid 30606:tid 140535910045440] [client 54.166.152.116:33579] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 02:31:16.049079 2014] [:error] [pid 30606:tid 140535901652736] [client 54.197.161.42:53622] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 03:04:05.391282 2014] [:error] [pid 30599:tid 140535910045440] [client 104.131.193.200:34000] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://www.netcraft.com/survey/
+[Wed Sep 10 03:58:26.444117 2014] [:error] [pid 30600:tid 140535893260032] [client 62.210.38.226:40403] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 05:54:36.529055 2014] [:error] [pid 30606:tid 140535893260032] [client 54.166.227.65:58666] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 09:18:28.369383 2014] [:error] [pid 30606:tid 140535868081920] [client 23.92.223.14:40565] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 09:18:28.551499 2014] [:error] [pid 30599:tid 140535876474624] [client 23.92.223.14:40580] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 09:38:27.211189 2014] [:error] [pid 30600:tid 140535910045440] [client 182.254.152.209:44212] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 19:37:33.974973 2014] [:error] [pid 30600:tid 140536010757888] [client 62.210.38.226:47803] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 19:38:06.067593 2014] [:error] [pid 30606:tid 140535935223552] [client 61.142.114.232:59014] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 20:08:14.686429 2014] [:error] [pid 30606:tid 140535943616256] [client 117.21.173.155:3005] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 23:04:26.866037 2014] [:error] [pid 30599:tid 140535968794368] [client 66.249.67.50:61233] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 23:16:43.991127 2014] [:error] [pid 30606:tid 140535926830848] [client 198.20.69.74:60996] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 23:16:44.106092 2014] [:error] [pid 30599:tid 140535926830848] [client 198.20.69.74:33428] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 23:17:02.211475 2014] [:error] [pid 30600:tid 140536127158016] [client 198.20.69.74:54964] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 23:17:18.615362 2014] [:error] [pid 30599:tid 140535952008960] [client 198.20.69.74:51572] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 10 23:38:44.107663 2014] [:error] [pid 30600:tid 140536135550720] [client 182.254.139.99:50742] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 03:57:38.940840 2014] [:error] [pid 30599:tid 140535901652736] [client 182.254.132.201:35738] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 04:06:57.600352 2014] [:error] [pid 30600:tid 140535868081920] [client 54.92.143.240:44498] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 04:42:07.714195 2014] [:error] [pid 30600:tid 140535901652736] [client 50.57.164.250:15050] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 13:18:32.523088 2014] [:error] [pid 30600:tid 140535960401664] [client 221.232.155.50:44234] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 13:54:07.453635 2014] [:error] [pid 30606:tid 140535935223552] [client 182.254.140.205:47983] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 17:06:16.133663 2014] [:error] [pid 30606:tid 140535926830848] [client 54.167.250.79:46726] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 18:31:35.889303 2014] [:error] [pid 30600:tid 140535926830848] [client 54.203.109.120:61286] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 11 19:16:31.806527 2014] [:error] [pid 30600:tid 140535918438144] [client 104.131.210.214:50440] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 12 01:56:57.209402 2014] [:error] [pid 30606:tid 140535985579776] [client 200.140.133.250:44742] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 12 07:11:52.209437 2014] [core:error] [pid 30599:tid 140536127158016] [client 89.248.160.192:49066] AH00126: Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Fri Sep 12 07:11:52.544056 2014] [cgid:error] [pid 30600:tid 140536143943424] [client 89.248.160.192:49220] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Fri Sep 12 07:11:52.846729 2014] [cgid:error] [pid 30606:tid 140536002365184] [client 89.248.160.192:49371] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Fri Sep 12 07:11:53.149330 2014] [cgid:error] [pid 30599:tid 140536135550720] [client 89.248.160.192:49528] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Fri Sep 12 07:11:53.452025 2014] [cgid:error] [pid 30600:tid 140536027543296] [client 89.248.160.192:49670] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Fri Sep 12 07:11:53.754048 2014] [cgid:error] [pid 30606:tid 140536110372608] [client 89.248.160.192:49812] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Fri Sep 12 07:31:59.552516 2014] [:error] [pid 30599:tid 140536143943424] [client 92.247.49.122:27672] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 12 11:35:55.617889 2014] [core:error] [pid 30606:tid 140536118765312] [client 89.248.160.192:48586] AH00126: Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Fri Sep 12 11:35:55.921284 2014] [cgid:error] [pid 30599:tid 140536027543296] [client 89.248.160.192:48730] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Fri Sep 12 11:35:56.225222 2014] [cgid:error] [pid 30600:tid 140535968794368] [client 89.248.160.192:48886] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Fri Sep 12 11:35:56.528197 2014] [cgid:error] [pid 30606:tid 140536127158016] [client 89.248.160.192:49029] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Fri Sep 12 11:35:56.832004 2014] [cgid:error] [pid 30599:tid 140536019150592] [client 89.248.160.192:49176] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Fri Sep 12 11:35:57.134246 2014] [cgid:error] [pid 30600:tid 140535993972480] [client 89.248.160.192:49329] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Fri Sep 12 23:45:59.674192 2014] [:error] [pid 30606:tid 140535960401664] [client 54.204.107.45:33620] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 13 03:37:24.713539 2014] [:error] [pid 30599:tid 140535943616256] [client 182.254.149.21:38567] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 13 05:36:38.466090 2014] [:error] [pid 30600:tid 140536135550720] [client 164.40.153.130:35508] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 13 06:13:11.543191 2014] [:error] [pid 30606:tid 140535893260032] [client 178.62.139.66:56800] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 13 12:05:01.683200 2014] [cgid:error] [pid 30600:tid 140535876474624] [client 80.73.9.164:33317] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Sat Sep 13 12:05:02.115575 2014] [cgid:error] [pid 30606:tid 140536010757888] [client 80.73.9.164:33323] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Sat Sep 13 12:05:02.783491 2014] [cgid:error] [pid 30599:tid 140535868081920] [client 80.73.9.164:33327] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Sat Sep 13 12:05:03.197103 2014] [cgid:error] [pid 30600:tid 140535884867328] [client 80.73.9.164:33333] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Sat Sep 13 12:05:03.621154 2014] [cgid:error] [pid 30606:tid 140536019150592] [client 80.73.9.164:33338] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Sat Sep 13 13:27:48.316894 2014] [:error] [pid 30606:tid 140536110372608] [client 54.92.145.213:39942] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 13 17:09:19.794102 2014] [:error] [pid 30599:tid 140536110372608] [client 128.41.128.21:46084] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 13 19:39:51.683141 2014] [:error] [pid 30600:tid 140535993972480] [client 93.174.94.141:41305] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 13 23:14:54.505678 2014] [:error] [pid 30606:tid 140535926830848] [client 66.249.65.42:48064] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 14 04:05:48.524856 2014] [:error] [pid 30600:tid 140536135550720] [client 74.208.173.136:3599] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 14 11:47:32.392695 2014] [:error] [pid 20508:tid 140536127158016] [client 54.167.250.79:44984] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 14 18:41:36.386793 2014] [:error] [pid 20508:tid 140535943616256] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 01:10:47.652298 2014] [:error] [pid 20507:tid 140535943616256] [client 54.166.19.99:36895] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 09:33:12.161561 2014] [:error] [pid 20508:tid 140536019150592] [client 182.254.208.14:47203] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 10:26:29.957986 2014] [:error] [pid 20507:tid 140536019150592] [client 182.254.153.184:47656] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 11:52:38.494784 2014] [cgid:error] [pid 20507:tid 140536010757888] [client 193.224.66.230:2182] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Mon Sep 15 11:52:39.774111 2014] [cgid:error] [pid 20508:tid 140536118765312] [client 193.224.66.230:24713] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Mon Sep 15 17:41:23.237030 2014] [:error] [pid 20507:tid 140535893260032] [client 93.174.95.73:48891] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 17:41:23.590226 2014] [:error] [pid 20508:tid 140535926830848] [client 93.174.95.73:49038] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 17:41:23.937489 2014] [:error] [pid 20507:tid 140535884867328] [client 93.174.95.73:49237] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 17:41:24.249153 2014] [:error] [pid 20508:tid 140535918438144] [client 93.174.95.73:49404] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 15 19:43:09.878127 2014] [cgid:error] [pid 20507:tid 140535960401664] [client 213.5.67.223:49359] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Mon Sep 15 19:43:10.070677 2014] [cgid:error] [pid 20507:tid 140535960401664] [client 213.5.67.223:49359] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Mon Sep 15 19:43:10.232695 2014] [cgid:error] [pid 20507:tid 140535960401664] [client 213.5.67.223:49359] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Mon Sep 15 19:43:10.394154 2014] [cgid:error] [pid 20507:tid 140535960401664] [client 213.5.67.223:49359] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Mon Sep 15 19:43:10.555547 2014] [cgid:error] [pid 20507:tid 140535960401664] [client 213.5.67.223:49359] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Mon Sep 15 20:12:25.477402 2014] [:error] [pid 20508:tid 140535910045440] [client 183.60.48.25:56731] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 04:20:09.605353 2014] [:error] [pid 20507:tid 140536027543296] [client 182.254.209.73:58413] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 04:20:54.762201 2014] [:error] [pid 20508:tid 140535993972480] [client 130.185.139.213:46433] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 06:50:20.464624 2014] [:error] [pid 20508:tid 140536127158016] [client 117.21.173.140:1995] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 11:11:40.754129 2014] [:error] [pid 20508:tid 140535884867328] [client 54.92.141.178:44158] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 11:51:06.227201 2014] [:error] [pid 20507:tid 140535952008960] [client 183.129.255.34:3125] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 12:28:23.262640 2014] [:error] [pid 20507:tid 140535960401664] [client 104.131.193.96:33006] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:35.685395 2014] [:error] [pid 20508:tid 140535893260032] [client 89.248.171.2:44593] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:35.988500 2014] [:error] [pid 20507:tid 140535876474624] [client 89.248.171.2:44804] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:36.330902 2014] [:error] [pid 20508:tid 140536143943424] [client 89.248.171.2:45024] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:36.634290 2014] [:error] [pid 20507:tid 140535868081920] [client 89.248.171.2:45266] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:36.938362 2014] [:error] [pid 20508:tid 140536027543296] [client 89.248.171.2:45482] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:37.240460 2014] [:error] [pid 20507:tid 140536143943424] [client 89.248.171.2:45720] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:37.544401 2014] [:error] [pid 20508:tid 140536110372608] [client 89.248.171.2:45960] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:37.847035 2014] [:error] [pid 20507:tid 140536118765312] [client 89.248.171.2:46181] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 14:04:38.148967 2014] [core:error] [pid 20508:tid 140536019150592] [client 89.248.171.2:46386] AH00126: Invalid URI in request GET  HTTP/1.1
+[Tue Sep 16 18:56:25.593004 2014] [:error] [pid 20508:tid 140535985579776] [client 93.170.129.239:41869] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 20:58:44.426209 2014] [:error] [pid 20507:tid 140535977187072] [client 54.77.56.125:35644] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 16 23:11:25.293980 2014] [:error] [pid 20508:tid 140535952008960] [client 182.254.151.226:36655] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 00:52:36.958800 2014] [:error] [pid 20507:tid 140535884867328] [client 209.126.230.71:45055] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 02:40:07.778955 2014] [:error] [pid 20508:tid 140535935223552] [client 181.112.151.211:44465] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 04:35:05.472731 2014] [core:error] [pid 20508:tid 140535918438144] [client 89.248.160.192:59298] AH00126: Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Wed Sep 17 04:35:05.776918 2014] [cgid:error] [pid 20507:tid 140535968794368] [client 89.248.160.192:59421] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Wed Sep 17 04:35:06.082935 2014] [cgid:error] [pid 20508:tid 140535884867328] [client 89.248.160.192:59540] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Wed Sep 17 04:35:06.385451 2014] [cgid:error] [pid 20507:tid 140535960401664] [client 89.248.160.192:59687] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Wed Sep 17 04:35:06.690311 2014] [cgid:error] [pid 20508:tid 140535868081920] [client 89.248.160.192:59818] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Wed Sep 17 04:35:06.994192 2014] [cgid:error] [pid 20507:tid 140535943616256] [client 89.248.160.192:59964] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Wed Sep 17 05:18:51.249243 2014] [:error] [pid 20508:tid 140535876474624] [client 61.160.224.130:56050] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 07:41:34.240122 2014] [:error] [pid 20508:tid 140535893260032] [client 54.166.152.116:57095] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 16:51:45.207168 2014] [:error] [pid 20508:tid 140535985579776] [client 117.21.225.168:1074] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 17:57:17.365511 2014] [:error] [pid 20507:tid 140535985579776] [client 120.192.31.182:2346] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 20:40:04.464869 2014] [:error] [pid 20507:tid 140535918438144] [client 195.211.155.227:38232] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 17 23:20:00.987076 2014] [:error] [pid 20507:tid 140535993972480] [client 54.92.169.153:45383] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 06:11:33.537973 2014] [:error] [pid 20508:tid 140535910045440] [client 222.209.132.160:57555] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: http://hotel.qunar.com/
+[Thu Sep 18 07:41:00.262612 2014] [:error] [pid 20508:tid 140536019150592] [client 61.191.217.249:1278] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 07:41:00.904726 2014] [:error] [pid 20507:tid 140535868081920] [client 61.191.217.249:1818] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 07:41:01.384737 2014] [:error] [pid 20508:tid 140536143943424] [client 61.191.217.249:2380] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 17:49:50.863863 2014] [:error] [pid 20507:tid 140535993972480] [client 107.22.2.97:57634] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 20:30:18.819621 2014] [:error] [pid 20508:tid 140535926830848] [client 66.249.69.106:37507] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 20:52:41.102923 2014] [:error] [pid 20507:tid 140536118765312] [client 207.46.13.130:9827] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 20:52:45.851087 2014] [:error] [pid 20508:tid 140535876474624] [client 207.46.13.130:12430] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 18 20:52:45.877000 2014] [:error] [pid 20508:tid 140535876474624] [client 207.46.13.130:12430] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 19 08:44:20.643041 2014] [:error] [pid 20508:tid 140535926830848] [client 66.249.69.90:61923] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 19 09:50:25.344695 2014] [:error] [pid 20508:tid 140535901652736] [client 117.21.173.140:2858] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 19 10:02:48.245953 2014] [:error] [pid 20507:tid 140536019150592] [client 217.31.48.30:56866] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 19 21:41:47.370644 2014] [:error] [pid 20507:tid 140535935223552] [client 182.254.153.120:47659] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 19 23:16:46.537528 2014] [:error] [pid 20508:tid 140535918438144] [client 54.92.150.61:38143] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 20 01:17:44.590800 2014] [:error] [pid 20507:tid 140535868081920] [client 222.35.16.27:38399] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 20 12:46:20.635131 2014] [:error] [pid 20507:tid 140535993972480] [client 122.226.223.69:2816] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 20 17:46:49.948576 2014] [:error] [pid 20507:tid 140535968794368] [client 54.167.250.79:56578] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 21 07:36:39.051432 2014] [:error] [pid 9139:tid 140536143943424] [client 54.197.207.172:48620] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 21 09:16:15.807845 2014] [:error] [pid 9138:tid 140536110372608] [client 117.21.173.140:4952] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 21 21:45:45.089319 2014] [:error] [pid 9139:tid 140536010757888] [client 36.38.35.66:55176] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 22 06:11:00.468599 2014] [:error] [pid 9139:tid 140535901652736] [client 71.6.165.200:51823] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 22 06:49:26.260061 2014] [:error] [pid 9139:tid 140535893260032] [client 117.21.225.168:4564] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 22 11:16:53.580356 2014] [:error] [pid 9138:tid 140536110372608] [client 107.22.153.161:35138] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 22 12:51:05.683554 2014] [cgid:error] [pid 9138:tid 140536027543296] [client 187.33.2.88:46145] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Mon Sep 22 16:11:08.484415 2014] [:error] [pid 9139:tid 140535943616256] [client 183.129.255.34:4529] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 22 16:55:30.739362 2014] [:error] [pid 9139:tid 140536019150592] [client 182.254.153.184:46218] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 23 07:31:24.876186 2014] [:error] [pid 9139:tid 140535935223552] [client 54.92.152.74:44701] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 23 08:00:31.148527 2014] [:error] [pid 9138:tid 140535952008960] [client 182.254.153.184:60771] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 23 09:11:00.736783 2014] [:error] [pid 9139:tid 140535960401664] [client 117.21.173.140:4803] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 23 09:31:55.789375 2014] [:error] [pid 9138:tid 140535943616256] [client 180.185.59.195:40667] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 23 20:08:33.470388 2014] [:error] [pid 9139:tid 140535868081920] [client 54.166.179.135:43603] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Tue Sep 23 23:13:35.476674 2014] [:error] [pid 9145:tid 140535876474624] [client 116.113.96.171:64963] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 01:02:28.230244 2014] [:error] [pid 9139:tid 140536127158016] [client 117.21.225.168:2172] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 04:45:25.952805 2014] [:error] [pid 9139:tid 140536019150592] [client 182.254.134.114:53709] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 11:44:43.180925 2014] [:error] [pid 9139:tid 140535977187072] [client 50.17.42.159:40344] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 15:39:25.732875 2014] [:error] [pid 9145:tid 140536019150592] [client 122.226.223.85:3846] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 17:19:19.178006 2014] [:error] [pid 9145:tid 140535968794368] [client 182.254.152.151:38019] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 20:35:34.276636 2014] [:error] [pid 9138:tid 140535926830848] [client 61.160.213.4:4253] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 20:35:34.436798 2014] [:error] [pid 9138:tid 140535926830848] [client 61.160.213.4:4253] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Wed Sep 24 21:22:03.107116 2014] [:error] [pid 9145:tid 140535926830848] [client 209.126.230.72:57655] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: () { :; }; ping -c 11 209.126.230.74
+[Thu Sep 25 00:13:17.867932 2014] [:error] [pid 9145:tid 140535935223552] [client 182.254.208.242:56456] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:36.116231 2014] [:error] [pid 9145:tid 140535943616256] [client 93.174.93.149:42385] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:36.420959 2014] [:error] [pid 9139:tid 140535910045440] [client 93.174.93.149:42672] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:36.724645 2014] [:error] [pid 9138:tid 140535910045440] [client 93.174.93.149:42954] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:37.029955 2014] [:error] [pid 9145:tid 140535918438144] [client 93.174.93.149:43319] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:37.334545 2014] [:error] [pid 9139:tid 140535893260032] [client 93.174.93.149:43490] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:37.650524 2014] [:error] [pid 9138:tid 140535901652736] [client 93.174.93.149:43598] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:37.951554 2014] [:error] [pid 9145:tid 140535910045440] [client 93.174.93.149:43718] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:38.255366 2014] [:error] [pid 9139:tid 140535884867328] [client 93.174.93.149:43796] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 01:03:38.557561 2014] [core:error] [pid 9138:tid 140535893260032] [client 93.174.93.149:43884] AH00126: Invalid URI in request GET  HTTP/1.1
+[Thu Sep 25 02:49:59.608790 2014] [:error] [pid 9145:tid 140535893260032] [client 89.207.135.125:60000] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 08:25:47.867075 2014] [:error] [pid 9138:tid 140536110372608] [client 182.254.152.209:53042] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 09:57:28.278534 2014] [:error] [pid 9145:tid 140536002365184] [client 117.21.173.140:4775] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 11:18:21.506669 2014] [:error] [pid 9145:tid 140535985579776] [client 54.234.234.22:38647] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 13:29:13.006701 2014] [:error] [pid 9145:tid 140536027543296] [client 182.254.141.88:40977] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 14:11:02.499343 2014] [:error] [pid 9139:tid 140535943616256] [client 117.21.191.206:4312] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 15:20:15.422464 2014] [:error] [pid 9139:tid 140536019150592] [client 60.164.173.49:38069] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 15:39:18.229889 2014] [:error] [pid 9138:tid 140536010757888] [client 182.254.152.209:58068] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 16:15:46.635045 2014] [:error] [pid 9138:tid 140536135550720] [client 198.20.69.74:36054] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi, referer: () { :; }; /bin/ping -c 1 104.131.0.69
+[Thu Sep 25 18:34:38.742125 2014] [:error] [pid 9139:tid 140536110372608] [client 193.189.116.124:61687] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 18:49:32.473672 2014] [:error] [pid 9138:tid 140536002365184] [client 122.228.207.244:51954] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 19:42:00.241309 2014] [:error] [pid 9145:tid 140536118765312] [client 66.249.67.34:43993] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Thu Sep 25 23:24:06.449425 2014] [:error] [pid 9145:tid 140536010757888] [client 120.192.31.182:4250] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 26 04:53:51.012011 2014] [:error] [pid 9145:tid 140535952008960] [client 202.38.120.248:53438] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 26 05:17:41.720587 2014] [:error] [pid 9139:tid 140535901652736] [client 54.167.147.247:36670] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 26 07:34:17.757236 2014] [:error] [pid 9138:tid 140535935223552] [client 117.21.173.140:4559] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 26 11:37:46.314735 2014] [:error] [pid 1206:tid 140712758720256] [client 68.119.155.115:62416] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 26 11:37:46.543736 2014] [:error] [pid 1206:tid 140712758720256] [client 68.119.155.115:62416] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 26 11:40:14.690446 2014] [:error] [pid 2014:tid 139786513786624] [client 68.119.155.115:62512] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Fri Sep 26 23:49:54.719205 2014] [:error] [pid 2015:tid 139786396288768] [client 104.192.0.19:59576] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 00:11:07.718537 2014] [:error] [pid 2014:tid 139786404681472] [client 107.22.101.87:57756] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 10:49:33.185183 2014] [:error] [pid 2014:tid 139786497001216] [client 189.204.70.148:54114] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 12:59:35.853282 2014] [cgid:error] [pid 2015:tid 139786438252288] [client 208.43.255.155:57544] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/test-cgi
+[Sat Sep 27 20:24:18.917828 2014] [:error] [pid 2015:tid 139786379503360] [client 198.12.87.151:57596] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 20:24:19.093159 2014] [:error] [pid 2014:tid 139786413074176] [client 198.12.87.151:57687] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 20:24:19.291010 2014] [:error] [pid 2015:tid 139786371110656] [client 198.12.87.151:57778] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 20:24:25.477603 2014] [:error] [pid 2014:tid 139786404681472] [client 198.12.87.151:60496] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 20:37:28.107256 2014] [:error] [pid 2015:tid 139786538964736] [client 54.92.179.225:41981] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:14:40.604190 2014] [:error] [pid 2014:tid 139786379503360] [client 182.254.141.88:60364] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:27.838743 2014] [:error] [pid 2014:tid 139786371110656] [client 93.174.93.149:37408] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:28.139846 2014] [:error] [pid 2015:tid 139786488608512] [client 93.174.93.149:37640] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:28.441533 2014] [:error] [pid 2014:tid 139786396288768] [client 93.174.93.149:37848] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:28.754420 2014] [:error] [pid 2015:tid 139786455037696] [client 93.174.93.149:38061] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:29.055168 2014] [:error] [pid 2014:tid 139786555750144] [client 93.174.93.149:38306] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:29.357822 2014] [:error] [pid 2015:tid 139786480215808] [client 93.174.93.149:38531] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:29.665988 2014] [:error] [pid 2014:tid 139786513786624] [client 93.174.93.149:38740] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:29.983403 2014] [:error] [pid 2015:tid 139786471823104] [client 93.174.93.149:38971] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sat Sep 27 21:34:30.286283 2014] [core:error] [pid 2014:tid 139786522179328] [client 93.174.93.149:39174] AH00126: Invalid URI in request GET  HTTP/1.1
+[Sun Sep 28 00:26:07.802537 2014] [:error] [pid 2014:tid 139786488608512] [client 120.192.31.182:2274] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 01:41:35.846306 2014] [:error] [pid 2015:tid 139786497001216] [client 54.251.83.67:54880] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 04:46:03.932007 2014] [:error] [pid 2014:tid 139786446644992] [client 212.59.30.110:43574] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 05:40:43.729619 2014] [:error] [pid 2015:tid 139786530572032] [client 182.254.132.201:58147] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 07:58:26.684371 2014] [:error] [pid 7285:tid 139786513786624] [client 89.248.168.46:37032] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 07:58:27.002233 2014] [:error] [pid 7284:tid 139786555750144] [client 89.248.168.46:37047] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 09:45:44.962691 2014] [:error] [pid 7285:tid 139786497001216] [client 217.72.242.16:49894] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 09:45:44.969427 2014] [cgid:error] [pid 7284:tid 139786488608512] [client 217.72.242.16:49893] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/test.sh
+[Sun Sep 28 09:45:44.977994 2014] [:error] [pid 7284:tid 139786538964736] [client 217.72.242.16:49895] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 11:24:51.365948 2014] [cgid:error] [pid 7285:tid 139786488608512] [client 67.211.230.58:10828] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/wlogin.cgi
+[Sun Sep 28 20:07:06.884110 2014] [:error] [pid 7285:tid 139786455037696] [client 54.204.107.45:38138] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 20:25:31.580314 2014] [cgid:error] [pid 7284:tid 139786505393920] [client 173.45.100.18:56983] AH01265: attempt to invoke directory as script: /usr/lib/cgi-bin/
+[Sun Sep 28 20:25:32.317446 2014] [cgid:error] [pid 7285:tid 139786547357440] [client 173.45.100.18:57584] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/hi
+[Sun Sep 28 21:44:45.377664 2014] [:error] [pid 7284:tid 139786497001216] [client 210.17.38.97:35072] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Sun Sep 28 22:00:47.772916 2014] [:error] [pid 7285:tid 139786438252288] [client 117.21.173.140:4281] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 00:47:40.868502 2014] [:error] [pid 7284:tid 139786421466880] [client 117.21.191.206:4144] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 01:35:21.040283 2014] [:error] [pid 7285:tid 139786362717952] [client 157.55.39.166:15279] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 01:35:29.173091 2014] [:error] [pid 7284:tid 139786396288768] [client 157.55.39.166:20358] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 01:35:29.199178 2014] [:error] [pid 7284:tid 139786396288768] [client 157.55.39.166:20358] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 01:35:29.235502 2014] [:error] [pid 7284:tid 139786396288768] [client 157.55.39.166:20358] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 03:13:47.748236 2014] [:error] [pid 7284:tid 139786371110656] [client 182.254.209.121:53688] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 05:36:11.491444 2014] [cgid:error] [pid 7284:tid 139786354325248] [client 59.45.68.77:53217] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php
+[Mon Sep 29 05:36:16.377395 2014] [cgid:error] [pid 7285:tid 139786513786624] [client 59.45.68.77:53219] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php5
+[Mon Sep 29 05:36:21.476909 2014] [cgid:error] [pid 7284:tid 139786555750144] [client 59.45.68.77:53221] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php-cgi
+[Mon Sep 29 05:36:26.198566 2014] [cgid:error] [pid 7285:tid 139786522179328] [client 59.45.68.77:53223] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php.cgi
+[Mon Sep 29 05:36:30.752879 2014] [cgid:error] [pid 7284:tid 139786547357440] [client 59.45.68.77:53225] AH01264: script not found or unable to stat: /usr/lib/cgi-bin/php4
+[Mon Sep 29 07:32:40.363954 2014] [:error] [pid 7284:tid 139786455037696] [client 80.82.64.145:35277] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:40.666706 2014] [:error] [pid 7285:tid 139786471823104] [client 80.82.64.145:35429] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:40.969568 2014] [:error] [pid 7284:tid 139786513786624] [client 80.82.64.145:35590] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:41.271544 2014] [:error] [pid 7285:tid 139786463430400] [client 80.82.64.145:35767] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:41.572686 2014] [:error] [pid 7284:tid 139786530572032] [client 80.82.64.145:35933] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:41.874826 2014] [:error] [pid 7285:tid 139786455037696] [client 80.82.64.145:36091] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:42.177095 2014] [:error] [pid 7284:tid 139786522179328] [client 80.82.64.145:36266] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:42.477732 2014] [:error] [pid 7285:tid 139786446644992] [client 80.82.64.145:36419] Target WSGI script not found or unable to stat: /home/ubuntu/UclaCalorieCounter/apache/django.wsgi
+[Mon Sep 29 07:32:42.778088 2014] [core:error] [pid 7284:tid 139786505393920] [client 80.82.64.145:36582] AH00126: Invalid URI in request GET  HTTP/1.1

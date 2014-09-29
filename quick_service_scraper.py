@@ -20,13 +20,16 @@ def checkNF(nutritionFacts):
 		return float(nutritionFacts.group())
 
 #start parseLink
-def parseLink(link, restaurant):
+def parseLink(name, link, restaurant):
 	url = urllib2.urlopen(link).read()
 	soup = BeautifulSoup(url)
+        unicode(soup)
+        str(soup)
+        soup.prettify()
 	
 	#check certain conditions in the link to see what type of item it is. Then use beautiful soup to parse the nutrition facts and fill 		the database appropriately.
 	newItem = Item()
-	newItem.name = soup.title.text
+	newItem.name = name
 	newItem.restaurant = restaurant
 	newItem.meal = "any"
 
@@ -78,29 +81,49 @@ def parseLink(link, restaurant):
 	else:
 		newItem.save()		
 		return
-	print soup.title.text
+	print name
 	print '\n'
 
 soup = BeautifulSoup(urllib2.urlopen('http://menu.ha.ucla.edu/foodpro/bruincafe.asp').read())
+unicode(soup)
+str(soup)
+soup.prettify()
 links = soup.find_all("a", class_="itemlink")
 for link in links:
+        name = link.text
+        name = str(name.encode('ascii', errors='ignore'))
 	url = "http://menu.ha.ucla.edu/foodpro/" + link['href']
-	parseLink(url, "Bruin Cafe")
+	parseLink(name, url, "Bruin Cafe")
 
 soup = BeautifulSoup(urllib2.urlopen('http://menu.ha.ucla.edu/foodpro/rendezvous.asp').read())
+unicode(soup)
+str(soup)
+soup.prettify()
 links = soup.find_all("a", class_="itemlink")
 for link in links:
+        name = link.text
+        name = str(name.encode('ascii', errors='ignore'))
 	url = "http://menu.ha.ucla.edu/foodpro/" + link['href']
-	parseLink(url, "Rendezvous")
+	parseLink(name, url, "Rendezvous")
 
 soup = BeautifulSoup(urllib2.urlopen('http://menu.ha.ucla.edu/foodpro/cafe1919.asp').read())
+unicode(soup)
+str(soup)
+soup.prettify()
 links = soup.find_all("a", class_="itemlink")
 for link in links:
+        name = link.text
+        name = str(name.encode('ascii', errors='ignore'))
 	url = "http://menu.ha.ucla.edu/foodpro/" + link['href']
-	parseLink(url, "Cafe 1919")
+	parseLink(name, url, "Cafe 1919")
 
 soup = BeautifulSoup(urllib2.urlopen('http://menu.ha.ucla.edu/foodpro/denevelatenight.asp').read())
+unicode(soup)
+str(soup)
+soup.prettify()
 links = soup.find_all("a", class_="itemlink")
 for link in links:
+	name = link.text
+        name = str(name.encode('ascii', errors='ignore'))
 	url = "http://menu.ha.ucla.edu/foodpro/" + link['href']
-	parseLink(url, "De Neve Late Night")
+	parseLink(name, url, "De Neve Late Night")

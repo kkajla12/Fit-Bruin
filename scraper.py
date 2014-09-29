@@ -23,13 +23,20 @@ def checkNF(nutritionFacts):
 		return float(nutritionFacts.group())
 
 #start parseLink
-def parseLink(link, meal, category, month, day, year):
-	url = urllib2.urlopen(link).read()
+def parseLink(name, link, meal, category, month, day, year):
+	try:
+		url = urllib2.urlopen(link)
+	except urllib2.HTTPError:
+		return
+	url = url.read()
 	soup = BeautifulSoup(url)
+	unicode(soup)
+	str(soup)
+	soup.prettify()
 	
 	#check certain conditions in the link to see what type of item it is. Then use beautiful soup to parse the nutrition facts and fill 		the database appropriately.
 	newItem = Item()
-	newItem.name = soup.title.text
+	newItem.name = name
 	newItem.restaurant = "Dining Hall"
 	if meal == 1:
 		newItem.meal = "Breakfast"
@@ -93,7 +100,6 @@ def parseLink(link, meal, category, month, day, year):
 	
 	item = Item.objects.get_or_create(name=newItem.name, restaurant=newItem.restaurant, meal=newItem.meal, category=newItem.category, month=newItem.month, day=newItem.day, year=newItem.year, defaults=defaults)
 
-	print soup.title.text
 	print '\n'
 
 #datetime object to keep track of what the date and time currently are
@@ -119,20 +125,24 @@ for diff in range(0, 8):
 	d = date + datetime.timedelta(days=diff)
 	for meal in range(1, 4):
 		print str(d.month) + '/' + str(d.day) + '/' + str(d.year) + ': meal - ' + str(meal)
-		soup = BeautifulSoup(urllib2.urlopen('http://menu.ha.ucla.edu/foodpro/default.asp?date=' + str(d.month) + '%2F' + str(d.day) + '%2F' + str(d.year) + '&meal=' + str(meal) +'&threshold=2').read())
+		soup = BeautifulSoup(urllib2.urlopen('http://menu.ha.ucla.edu/foodpro/default.asp?date=' + str(d.month) + '%2F' + str(d.day) + '%2F' + str(d.year) + '&meal=' + str(meal) +'&threshold=1').read())
+		unicode(soup)
+		str(soup)
+		soup.prettify()
 
 		uls = soup.find_all(class_=re.compile("(?=menugridcell)"))
 
 		for ul in uls:
 			if ul.find('li') is not None:
-				category = ul.find('li').text
+				category = str(ul.find('li').text)
 			else:
 				continue
 			links = ul.find_all('li')
 			for link in links:
-				print link.text
 				link = link.find('a')
 				if link is not None:
+					name = link.text
+					name = str(name.encode('ascii', errors='ignore'))
+					print name
 					url = "http://menu.ha.ucla.edu/foodpro/" + link['href']
-					parseLink(url, meal, category, d.month, d.day, d.year)
-
+					parseLink(name, url, meal, category, d.month, d.day, d.year)

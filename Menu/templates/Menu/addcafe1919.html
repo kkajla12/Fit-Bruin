@@ -9,7 +9,7 @@
 		<div>
 			<dl>
 				<dt><h2 class="text-info">Cafe 1919</h2></dt>
-				<dd><h4 class="text-warning">Check mark items you have eaten from the dropdown menus and click <button class="btn btn-info">Add Items</button> to add the items to your food log</h4></dd>
+				<dd><h4 class="text-warning">Check mark items you have eaten from the dropdown menus and click <button class="btn btn-info">Add Items</button> to add the items to your food log. Click <span class="glyphicon glyphicon-list" style="color:black"></span> to view detailed nutrition facts about an item.</h4></dd>
 			<dl>
 		</div>
 	</head>
@@ -17,35 +17,6 @@
 		<form method="post" action="">
 		{% csrf_token %}
 			<div class="panel-group" id="accordionmain">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Breakfast" style="text-align:center">
-								<h4 class="panel-title" style="text-align:center">Breakfast <span class="glyphicon glyphicon-chevron-down glyphicon-white" style="float:right"></span></h4>
-							</a>
-						</div>
-						<div id="Breakfast" class="accordion-body collapse in">
-							<div class="accordion-inner">
-								<div class="table-responsive">
-								<table class="table table-bordered table-hover">
-									<!--<thead>
-										<th class="well" style="text-align:center">Soups</th>
-									</thead>-->
-									<tbody>
-										{% if form.fields.breakfast.choices|length_is:"0" %}
-										<tr class="success">
-											<td class="fieldWrapper">None</td>
-										</tr>
-										{% else %}
-										{% for choice in form.breakfast %}
-											{{ choice }}
-										{% endfor %}
-										{% endif %}
-									</tbody>
-								</table>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionmain" href="#Pizzette" style="text-align:center">

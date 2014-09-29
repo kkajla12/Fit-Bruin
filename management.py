@@ -10,7 +10,9 @@ date = datetime.datetime.today().date()
 users = User.objects.all()
 for user in users:
 	print user.username
-	if user.username == "karan":
+	if user.username == "admin":
+		continue
+	if user.username == "AdminAllie":
 		continue
 	user.profile.calories_eaten = 0
 	user.profile.calories_remaining = user.profile.calories_limit
@@ -49,3 +51,4 @@ for user in users:
 	user.save()
 
 foodlogs = FoodLog.objects.exclude(date=date).delete()
+items = Item.objects.filter(restaurant="Dining Hall", day=date.day, month=date.month, year=date.year).delete()

@@ -7,7 +7,7 @@
 	<head>
 		<dl>
 			<dt><h2 class="text-info">Food Log</h2></dt>
-			<dd><h4 class="text-warning">Track your daily food intake. Add items with <button class="btn btn-info">Add Items</button> and remove items using the <span style="color:black" class="glyphicon glyphicon-trash"></span> by each item.</h4></dd>
+			<dd><h4 class="text-warning">Track your daily food intake. Add items with <button class="btn btn-info">Add Items</button> and remove items using the <span style="color:black" class="glyphicon glyphicon-trash"></span> by each item. Update portions with <span class="glyphicon glyphicon-refresh" style="color:black"></span>.</h4></dd>
 		</dl>
 	</head>
 	<body>
@@ -33,6 +33,7 @@
 								<th style="text-align:center">Total Carbs</th>
 								<th style="text-align:center">Protein</th>
 								<th style="text-align:center">Portion</th>
+                                                                <th style="text-align:center">Update</th>
 								<th style="text-align:center">Delete</th>
 							</thead>
 							<tbody>
@@ -59,8 +60,9 @@
 									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
-									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
-									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+									<td style="text-align:center"><input id="portion{{ foodlog.id }}" type="number" value="{{ foodlog.portion }}" min="1" max="15" size="2"></td>
+									<td style="text-align:center"><span class="glyphicon glyphicon-refresh" onclick="updateportion({{ foodlog.id }})"></span></td>
+									<td style="text-align:center"><a id="delete{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 								{% endfor %}
 								{% endif %}
@@ -93,6 +95,7 @@
 								<th style="text-align:center">Total Carbs</th>
 								<th style="text-align:center">Protein</th>
 								<th style="text-align:center">Portion</th>
+                                                                <th style="text-align:center">Update</th>
 								<th style="text-align:center">Delete</th>
 							</thead>
 							<tbody>
@@ -119,8 +122,9 @@
 									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
-									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
-									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+									<td style="text-align:center"><input id="portion{{ foodlog.id }}" type="number" value="{{ foodlog.portion }}" min="1" max="15" size="2"></td>
+									<td style="text-align:center"><span class="glyphicon glyphicon-refresh" onclick="updateportion({{ foodlog.id }})"></span></td>
+									<td style="text-align:center"><a id="delete{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 								{% endfor %}
 								{% endif %}
@@ -153,6 +157,7 @@
 								<th style="text-align:center">Total Carbs</th>
 								<th style="text-align:center">Protein</th>
 								<th style="text-align:center">Portion</th>
+                                                                <th style="text-align:center">Update</th>
 								<th style="text-align:center">Delete</th>
 							</thead>
 							<tbody>
@@ -179,8 +184,9 @@
 									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
-									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
-									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+									<td style="text-align:center"><input id="portion{{ foodlog.id }}" type="number" value="{{ foodlog.portion }}" min="1" max="15" size="2"></td>
+									<td style="text-align:center"><span class="glyphicon glyphicon-refresh" onclick="updateportion({{ foodlog.id }})"></span></td>
+									<td style="text-align:center"><a id="delete{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 								{% endfor %}
 								{% endif %}
@@ -213,6 +219,7 @@
 								<th style="text-align:center">Total Carbs</th>
 								<th style="text-align:center">Protein</th>
 								<th style="text-align:center">Portion</th>
+                                                                <th style="text-align:center">Update</th>
 								<th style="text-align:center">Delete</th>
 							</thead>
 							<tbody>
@@ -239,8 +246,9 @@
 									<td style="text-align:center">{{ foodlog.item.cholesterol }}{{ foodlog.item.cholesterol_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.total_carbs }}{{ foodlog.item.total_carbs_units }}</td>
 									<td style="text-align:center">{{ foodlog.item.protein }}{{ foodlog.item.protein_units }}</td>
-									<td id="portion{{ foodlog.id }}" style="text-align:center">{{ foodlog.portion }}</td>
-									<td style="text-align:center"><a class="delete" id="{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}, {{ foodlog.portion }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
+									<td style="text-align:center"><input id="portion{{ foodlog.id }}" type="number" value="{{ foodlog.portion }}" min="1" max="15" size="2"></td>
+									<td style="text-align:center"><span class="glyphicon glyphicon-refresh" onclick="updateportion({{ foodlog.id }})"></span></td>
+									<td style="text-align:center"><a id="delete{{ foodlog.id }}" onclick="deleteFoodLog({{ foodlog.id }}); return false;"><span style="color:black" class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 								{% endfor %}
 								{% endif %}
@@ -254,6 +262,7 @@
 				</div>
 			</div>
 	<script src="{% static "js/deleteitem.js" %}"></script>
+        <script src="{% static "js/updateportion.js" %}"></script>
 	</body>
 	{% endblock %}
 </html>
